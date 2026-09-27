@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+/*
+ * IQON — tokens de design
+ * Paleta derivada da identidade atual (abismo violeta + lilás), com superfícies claras
+ * em névoa lilás no lugar do creme genérico.
+ */
+@theme {
+  --color-abismo: #0a0016;
+  --color-noite: #150728;
+  --color-violeta: #6b21c8;
+  --color-violeta-escuro: #5516a6;
+  --color-lilas: #b99af0;
+  --color-lilas-claro: #dccbfb;
+  --color-nevoa: #eeeaf4;
+  --color-papel: #f8f6fb;
+  --color-luz: #f5f1fa;
+  --color-luz-suave: #ada4bc;
+  --color-tinta: #140a22;
+  --color-tinta-suave: #574d66;
+
+  /* Escala tipográfica */
+  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.02em;
+  --text-h2: clamp(2.25rem, 1.65rem + 2.6vw, 4.125rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: clamp(1.75rem, 1.5rem + 1vw, 2.375rem);
+  --text-h3--line-height: 1.1;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h4: clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem);
+  --text-h4--line-height: 1.2;
+  --text-lead: clamp(1.125rem, 1.07rem + 0.25vw, 1.3125rem);
+  --text-lead--line-height: 1.55;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.55;
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.45;
+  --text-label--letter-spacing: 0.01em;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Ritmo vertical das seções */
+@utility section-y {
+  padding-block: clamp(5rem, 3.4rem + 6vw, 9.5rem);
+}
+
+/* Grão sutil das superfícies escuras (herdado da identidade atual) */
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.07 0 0 0 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Animações: o atraso vem de --delay no próprio elemento. Sempre usadas com motion-safe: */
+
+/* Desenha um traço (circle ou path com pathLength="1" e stroke-dasharray="1"). */
+@utility anim-draw {
+  animation: draw 1.6s var(--ease-out-soft) var(--delay, 0s) both;
+}
+
+/* Mesmo desenho, acompanhando a rolagem onde o navegador suporta; nos demais, o traço aparece completo. */
+@utility anim-draw-on-scroll {
+  @supports (animation-timeline: view()) {
+    animation: draw linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+}
+
+@utility anim-rise {
+  animation: rise 0.9s var(--ease-out-soft) var(--delay, 0s) both;
+}
+
+@utility anim-fade-in {
+  animation: fade-in 1.2s ease var(--delay, 0s) both;
+}
+
+@utility anim-orbit {
+  animation: orbit var(--orbit-duration, 60s) linear infinite;
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.875rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--color-abismo);
+    color-scheme: dark;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  body {
+    background-color: var(--color-abismo);
+    color: var(--color-luz);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    text-rendering: optimizeLegibility;
+  }
+
+  :where(section[id]) {
+    scroll-margin-top: 4.5rem;
+  }
+
+  @media (min-width: 64rem) {
+    :where(section[id]) {
+      scroll-margin-top: 5.5rem;
+    }
+  }
+
+  ::selection {
+    background-color: var(--color-lilas);
+    color: var(--color-abismo);
+  }
+
+  /* Foco visível com contraste correto em cada superfície */
+  :focus-visible {
+    outline: 2px solid var(--focus-color, var(--color-lilas));
+    outline-offset: 3px;
+  }
+
+  .on-light {
+    --focus-color: var(--color-violeta);
+  }
+
+  .on-dark {
+    --focus-color: var(--color-lilas);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Abertura suave do FAQ onde o navegador suporta (melhoria progressiva) */
+@supports (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    .faq-item {
+      interpolate-size: allow-keywords;
+    }
+
+    .faq-item::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size 0.4s var(--ease-out-soft),
+        content-visibility 0.4s allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      block-size: auto;
+    }
+  }
+}
