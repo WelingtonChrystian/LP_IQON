@@ -11,8 +11,7 @@ import { cn } from "@/lib/cn";
 import { composeLeadMessage, whatsappHref, type LeadDetails } from "@/lib/whatsapp";
 
 /**
- * Monta a primeira mensagem do lead e abre o WhatsApp.
- * Nenhum dado é enviado a servidores: o visitante confirma o envio no próprio WhatsApp.
+ * Monta a mensagem e abre o WhatsApp com os gargalos identificados.
  */
 export function LeadForm({ className }: { className?: string }) {
   const { selected, isSelected, toggle } = useDiagnostic();
@@ -44,22 +43,29 @@ export function LeadForm({ className }: { className?: string }) {
       onSubmit={handleSubmit}
       aria-labelledby="lead-form-title"
       className={cn(
-        "rounded-[2rem] border border-lilas/15 bg-noite/85 p-6 backdrop-blur-sm sm:p-10",
+        "rounded-2xl border border-lilas/20 bg-noite-card/85 p-6 backdrop-blur-sm sm:p-7 shadow-xs",
         className,
       )}
     >
-      <h3 id="lead-form-title" className="font-display text-h3 text-balance text-luz">
-        {leadForm.title}
-      </h3>
-      <p className="mt-3 text-small text-pretty text-luz-suave">{leadForm.intro}</p>
+      <div className="flex items-center justify-between border-b border-lilas/15 pb-4">
+        <div>
+          <h3 id="lead-form-title" className="font-sans text-h4 font-medium text-luz">
+            {leadForm.title}
+          </h3>
+          <p className="mt-1 text-small text-luz-suave">{leadForm.intro}</p>
+        </div>
+        <MessageCircle className="size-5 text-lilas shrink-0" />
+      </div>
 
-      <fieldset className="mt-8">
-        <legend className="text-small font-medium text-luz">{leadForm.question}</legend>
-        <div className="mt-4 grid gap-2">
+      <fieldset className="mt-5">
+        <legend className="text-label font-medium uppercase tracking-wider text-lilas-claro">
+          {leadForm.question}
+        </legend>
+        <div className="mt-2.5 grid gap-1.5 max-h-56 overflow-y-auto pr-1">
           {painOptions.map((option) => (
             <label
               key={option.id}
-              className="group flex min-h-12 cursor-pointer items-center gap-3.5 rounded-xl border border-lilas/20 px-4 py-2.5 text-small text-luz-suave transition-colors duration-300 hover:border-lilas/50 hover:text-luz has-checked:border-lilas has-checked:bg-lilas/10 has-checked:text-luz has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-lilas motion-reduce:transition-none"
+              className="group flex cursor-pointer items-center gap-2.5 rounded-lg border border-lilas/15 bg-noite/40 px-3 py-2 text-small text-luz-suave transition-colors hover:border-lilas/40 hover:text-luz has-checked:border-lilas has-checked:bg-lilas/10 has-checked:text-luz select-none"
             >
               <input
                 type="checkbox"
@@ -69,26 +75,27 @@ export function LeadForm({ className }: { className?: string }) {
               />
               <span
                 aria-hidden="true"
-                className="grid size-5 shrink-0 place-items-center rounded-full border border-lilas/40 transition-colors duration-300 group-has-checked:border-lilas group-has-checked:bg-lilas motion-reduce:transition-none"
+                className="grid size-4 shrink-0 place-items-center rounded-full border border-lilas/30 transition-colors group-has-checked:border-lilas group-has-checked:bg-lilas"
               >
                 <Check
-                  className="size-3 text-abismo opacity-0 transition-opacity duration-300 group-has-checked:opacity-100 motion-reduce:transition-none"
+                  className="size-2.5 text-abismo opacity-0 transition-opacity group-has-checked:opacity-100"
                   strokeWidth={3}
                 />
               </span>
-              {option.label}
+              <span className="truncate">{option.label}</span>
             </label>
           ))}
         </div>
       </fieldset>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">
         <Field
           id="lead-name"
           label={leadForm.fields.name}
           autoComplete="name"
           value={details.name}
           onChange={updateField("name")}
+          placeholder="Seu nome"
         />
         <Field
           id="lead-business"
@@ -96,6 +103,14 @@ export function LeadForm({ className }: { className?: string }) {
           autoComplete="organization"
           value={details.business}
           onChange={updateField("business")}
+          placeholder="Sua empresa"
+        />
+        <Field
+          id="lead-segment"
+          label={leadForm.fields.segment}
+          value={details.segment}
+          onChange={updateField("segment")}
+          placeholder={leadForm.segmentPlaceholder}
         />
         <Field
           id="lead-city"
@@ -103,50 +118,53 @@ export function LeadForm({ className }: { className?: string }) {
           autoComplete="address-level2"
           value={details.city}
           onChange={updateField("city")}
-        />
-        <Field
-          id="lead-segment"
-          label={leadForm.fields.segment}
-          autoComplete="off"
-          placeholder={leadForm.segmentPlaceholder}
-          value={details.segment}
-          onChange={updateField("segment")}
+          placeholder="Sua cidade"
         />
       </div>
 
-      <button
-        type="submit"
-        className={buttonStyles({
-          variant: "light",
-          className: "mt-8 w-full sm:min-h-14 sm:text-body",
-        })}
-      >
-        <MessageCircle aria-hidden="true" className="size-5 shrink-0" />
-        {ctas.conversation}
-        <span className="sr-only"> pelo WhatsApp (abre em uma nova aba)</span>
-      </button>
-      <p className="mt-4 text-center text-label text-pretty text-luz-suave">{leadForm.microcopy}</p>
+      <div className="mt-6 border-t border-lilas/15 pt-4">
+        <button
+          type="submit"
+          className={buttonStyles({ variant: "light", size: "md", className: "w-full cursor-pointer" })}
+        >
+          {ctas.conversation}
+        </button>
+        <p className="mt-2.5 text-center text-label text-luz-suave/80">
+          {leadForm.microcopy}
+        </p>
+      </div>
     </form>
   );
 }
 
-type FieldProps = Omit<ComponentProps<"input">, "id" | "className"> & {
+function Field({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder,
+  autoComplete,
+}: {
   id: string;
   label: string;
-  className?: string;
-};
-
-function Field({ id, label, className, ...inputProps }: FieldProps) {
+  value: string;
+  onChange: ComponentProps<"input">["onChange"];
+  placeholder?: string;
+  autoComplete?: string;
+}) {
   return (
-    <div className={className}>
-      <label htmlFor={id} className="mb-2 block text-small text-luz-suave">
+    <div>
+      <label htmlFor={id} className="block text-label font-medium text-luz-suave uppercase tracking-wider">
         {label}
       </label>
       <input
-        id={id}
         type="text"
-        className="h-12 w-full rounded-xl border border-lilas/20 bg-abismo/70 px-4 text-body text-luz transition-colors placeholder:text-luz-suave/70 hover:border-lilas/40 focus:border-lilas"
-        {...inputProps}
+        id={id}
+        autoComplete={autoComplete}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className="mt-1 block w-full rounded-xl border border-lilas/20 bg-noite/50 px-3 py-2 text-small text-luz placeholder:text-luz-suave/40 focus:border-lilas focus:outline-none focus:ring-1 focus:ring-lilas transition-colors"
       />
     </div>
   );

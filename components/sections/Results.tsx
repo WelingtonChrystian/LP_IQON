@@ -1,33 +1,35 @@
 import { Container } from "@/components/ui/Container";
 import { results } from "@/content/process";
-import { cn } from "@/lib/cn";
 
-/** Expectativa de resultado sem cronograma: o caminho existe, mas não é uma linha reta. */
 export function Results() {
-  const lastIndex = results.paragraphs.length - 1;
-
   return (
     <section
-      id="resultados"
+      id="parceria"
       aria-labelledby="resultados-title"
-      className="section-y overflow-hidden bg-noite"
+      className="section-y overflow-hidden bg-noite/80 backdrop-blur-[2px]"
     >
       <Container>
-        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
-          <h2
-            id="resultados-title"
-            className="font-display text-h2 text-balance text-luz lg:col-span-5"
-          >
-            {results.title}
-          </h2>
-          <div className="space-y-5 lg:col-span-6 lg:col-start-7 lg:pt-3">
-            {results.paragraphs.map((paragraph, index) => (
+        <div className="grid gap-6 lg:grid-cols-12 lg:gap-10 items-center">
+          <div className="lg:col-span-5">
+            <p className="text-label font-medium uppercase tracking-wider text-lilas">
+              {results.tagline}
+            </p>
+            <h2
+              id="resultados-title"
+              className="mt-1.5 font-display text-h2 text-balance text-luz"
+            >
+              {results.title}
+            </h2>
+            <p className="mt-2.5 text-h4 font-semibold text-lilas">
+              {results.closing}
+            </p>
+          </div>
+
+          <div className="space-y-3 lg:col-span-7">
+            {results.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className={cn(
-                  "text-lead text-pretty",
-                  index === lastIndex ? "text-luz" : "text-luz-suave",
-                )}
+                className="text-small text-pretty text-luz-suave leading-relaxed"
               >
                 {paragraph}
               </p>
@@ -35,42 +37,24 @@ export function Results() {
           </div>
         </div>
 
-        <WindingPath className="mt-16 lg:mt-24" />
-
-        <p className="mt-10 font-display text-h3 italic text-luz lg:mt-12">{results.closing}</p>
+        <WindingPath className="mt-8 lg:mt-12" />
       </Container>
     </section>
   );
 }
 
-const pathClass = "text-lilas motion-safe:anim-draw-on-scroll";
+const pathClass = "text-lilas/70 motion-safe:anim-draw-on-scroll";
 
-/**
- * Traço que avança, volta e ajusta a rota. Ilustra o título sem eixo, escala de tempo
- * ou tendência de subida (não é um gráfico). Há um desenho para cada proporção de tela.
- */
 function WindingPath({ className }: { className?: string }) {
   return (
     <div aria-hidden="true" className={className}>
-      <svg viewBox="0 0 400 120" fill="none" className="h-auto w-full overflow-visible sm:hidden">
+      <svg viewBox="0 0 1200 90" fill="none" className="h-auto w-full overflow-visible max-h-16">
         <path
-          d="M0 72C50 72 80 44 130 50S190 92 222 80C250 70 276 34 262 26C248 18 226 36 234 58C242 82 280 90 312 80S370 58 400 66"
+          d="M0 50C120 50 180 20 290 28S450 75 540 58C610 44 668 12 646 6C624 0 584 18 596 42C608 65 668 76 738 60S900 24 1000 38S1130 65 1200 52"
           stroke="currentColor"
-          strokeWidth={1.75}
+          strokeWidth={1.5}
           strokeLinecap="round"
-          strokeOpacity={0.85}
-          pathLength={1}
-          strokeDasharray={1}
-          className={pathClass}
-        />
-      </svg>
-      <svg viewBox="0 0 1200 140" fill="none" className="hidden h-auto w-full overflow-visible sm:block">
-        <path
-          d="M0 86C120 86 180 48 290 56S450 116 540 96C610 80 668 32 646 20C624 8 584 32 596 64C608 98 668 112 738 96S900 42 1000 62S1130 98 1200 84"
-          stroke="currentColor"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeOpacity={0.85}
+          strokeOpacity={0.8}
           pathLength={1}
           strokeDasharray={1}
           className={pathClass}

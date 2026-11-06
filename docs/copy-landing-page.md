@@ -1,510 +1,221 @@
-# IQON — Copy da landing page
+# IQON — Copy da landing page (Versão Reposicionamento Estratégico)
 
-Todo o texto da página, na ordem em que aparece. Versão de 27/09/2026 (narrativa "Precisa ser escolhida").
+Todo o texto da página, na ordem em que aparece.
+Reflete o **Método IQON**: diagnóstico antes da venda, frentes modulares sob medida e execução integrada.
 
 - Rótulos em **negrito** (como **Título** ou **Botão**) indicam a função do texto e não aparecem na página.
 - Textos entre colchetes, como [nome], são preenchidos pelo visitante.
 - A tabela no fim do documento mostra em qual arquivo cada texto é editado.
 
-**Narrativa:** problema → tensão → diagnóstico → sistema IQON → serviços → processo → prova → objeções → conversa.
+**Ideia central do posicionamento:**
+> Primeiro entendemos o que está impedindo seu negócio de avançar. Depois estruturamos o que ele realmente precisa.
 
-**Regras que valem para a página inteira**
-
-- Nada de cronograma de resultado: nenhuma fase com prazo em meses e nenhuma previsão de quando os clientes chegam.
-- Contrato não é previsão de resultado. Hoje não existe prazo mínimo: qualquer lado encerra com um mês de aviso, sem multa.
-- Nada de prova inventada: depoimentos, projetos e números só entram quando forem reais e autorizados.
+**Regras que valem para a página inteira:**
+- Nada de cronograma de resultado ilusório: sem fases com prazos arbitrários em meses e nenhuma previsão mágica de quando clientes chegam.
+- Contrato baseado em confiança e método: sem prazo de fidelidade mínima; qualquer lado encerra com 30 dias de aviso, sem multa.
+- Nada de provas sociais inventadas: depoimentos e cases só entram quando forem reais e autorizados.
+- Sem linguagem de pacote fixo: as 5 frentes de atuação são modulares e desenhadas para a necessidade diagnosticada.
 
 ---
 
 ## Metadados (Google e compartilhamento)
 
-- **Título da aba:** IQON | Marketing estratégico para sua marca ser escolhida
-- **Descrição:** Agência de marketing estratégico para negócios locais. Posicionamento, conteúdo, tráfego pago e atendimento trabalhando como uma única estratégia.
-- **Texto alternativo da imagem de compartilhamento:** IQON. Marketing para quem não para. Agência de marketing estratégico.
+- **Título da aba:** IQON | Estratégia e Soluções para Negócios
+- **Descrição:** Investigamos onde estão os gargalos do seu negócio e estruturamos soluções sob medida em estratégia, performance, processos comerciais e operação.
+- **Assinatura (Tagline):** Primeiro o diagnóstico. Depois, a solução certa.
 
 ---
 
 ## Cabeçalho
 
 - **Logo:** IQON
-- **Menu:** Método, Serviços, Equipe, Dúvidas
+- **Menu:** Gargalos, Método, Frentes, Equipe, Dúvidas
 - **Botão:** Conversar com a IQON
 
 ### Menu no celular
 
-- **Links:** Método, Serviços, Equipe, Dúvidas
+- **Links:** Gargalos, Método, Frentes, Equipe, Dúvidas
 - **Link do Instagram:** @iqon.agencia no Instagram
-- **Botão:** Quero conversar com a IQON
+- **Botão:** Iniciar conversa de diagnóstico
 
 ---
 
-## 1. Abertura (hero)
+## 1. Hero — Posicionamento
 
-**Título** (a segunda linha fica em itálico)
-
+**Título** (a segunda linha em destaque itálico)
 Sua empresa não precisa aparecer mais.\
 *Precisa ser escolhida.*
 
 **Subtítulo**
-
-Posicionamento, conteúdo, tráfego pago e atendimento trabalhando como uma única estratégia — para sua marca ser encontrada, entendida e lembrada por quem pode comprar.
+A maioria das empresas oferece pacotes prontos. A IQON começa investigando o seu negócio: identificamos onde estão os gargalos reais em posicionamento, atração, atendimento ou operação — estruturando uma solução sob medida para o seu momento.
 
 **Botões**
-
-| Botão | O que faz |
+| Botão | Ação |
 | --- | --- |
-| Quero entender o que minha marca precisa | Abre o WhatsApp com a mensagem pronta |
-| Ver como a IQON trabalha | Leva à seção "Quatro partes. Uma estratégia." |
+| Quero entender o que meu negócio precisa | Abre o WhatsApp com mensagem de diagnóstico |
+| Conhecer o Método IQON | Leva à seção "#metodo" |
 
-**Linha da equipe** (ao lado das iniciais A, W e A)
+**Linha da equipe**
+Agatha, Welington e Alanna: estratégia, performance e processos comerciais trabalhando a partir do mesmo diagnóstico.
 
-Agatha, Welinton e Alanna: estratégia, conteúdo, tráfego e atendimento trabalhando na mesma direção.
-
-**Diagrama do sistema** (no computador fica ao lado do título; no celular e no tablet, na seção 2)
-
-Três círculos sobrepostos, desenhados ao mesmo tempo: **Presença**, **Autoridade** e **Conversão**. No centro, onde os três se encontram: *Sua marca*.
+**Diagrama do ecossistema**
+Três pilares integrados: **Estratégia**, **Performance** e **Conversão**, convergindo ao redor de *Seu negócio*.
 
 ---
 
-## 2. Três frentes
+## 2. Identificação de Gargalos (Diagnóstico Interativo)
 
-**Título:** Sua marca precisa funcionar em três frentes.
+**Título:** Onde o seu negócio está perdendo oportunidades?
 
-| Frente | Texto |
-| --- | --- |
-| Presença | Ser vista pelas pessoas certas. |
-| Autoridade | Deixar claro por que escolher você. |
-| Conversão | Transformar interesse em conversa comercial. |
+**Texto:** O problema nem sempre é falta de postagens ou de anúncios. Muitas vezes o gargalo real está na diferenciação, no atendimento ou na operação. Marque as situações que parecem familiares: elas já farão parte da nossa conversa de diagnóstico no WhatsApp.
 
-**Legenda** (em itálico)
+**Gargalos para marcar:**
+1. **Sua marca parece igual às concorrentes no mercado.**
+   - Você entrega um serviço de excelência, mas a comunicação não transmite seu real diferencial. Quando o valor não fica evidente, a decisão do cliente recai sobre o preço.
+2. **Os clientes chegam quase só por indicação.**
+   - Indicações são ótimas, mas não oferecem previsibilidade. Quando o boca a boca oscila, o faturamento oscila por falta de um canal ativo e previsível de atração.
+3. **Você já investiu em anúncios sem retorno claro.**
+   - Tráfego pago amplia o que já existe. Sem posicionamento claro ou processo comercial preparado para receber o lead, o orçamento em mídia acaba sendo desperdiçado.
+4. **Oportunidades chegam no WhatsApp, mas esfriam rápido.**
+   - Demora na resposta, mensagens genéricas ou falta de condução comercial fazem contatos qualificados sumirem antes de avançar para o fechamento.
+5. **Presença digital inconsistente ou dependente do dono.**
+   - A rotina do negócio consome todo o tempo. Sem um método estratégico, a comunicação fica parada ou vira uma obrigação pesada sem retorno perceptível.
+6. **Processo comercial ou equipe sem padronização.**
+   - Falta método na qualificação de leads e na condução das conversas. Cada pessoa atende de um jeito e gargalos operacionais prejudicam a experiência do cliente.
 
-Não é uma sequência.\
-É um sistema.
-
----
-
-## 3. Diagnóstico
-
-**Título:** Onde sua marca está perdendo oportunidades?
-
-**Texto:** Marque o que parece familiar. No final, esses pontos podem ir direto para a sua mensagem no WhatsApp — para a nossa conversa começar pelo que realmente importa.
-
-**Itens para marcar** (frase principal e explicação)
-
-1. Os clientes chegam quase só por indicação.
-   - Quando a indicação diminui, o movimento também diminui.
-2. Seu Instagram não representa o nível do seu negócio.
-   - Você entrega muito mais do que a sua presença digital consegue mostrar.
-3. Sua marca parece igual às concorrentes.
-   - Quando o valor não está claro, o preço acaba virando parte importante da decisão.
-4. Você já colocou dinheiro em anúncios sem entender o retorno.
-   - Tráfego acelera uma estratégia. Não substitui uma estratégia.
-5. As pessoas chegam no WhatsApp, mas poucas avançam.
-   - Atrair atenção não basta quando a conversa comercial não acompanha.
-
-**Mensagem de status** (muda conforme a seleção)
-
-| Seleção | Texto |
-| --- | --- |
-| Nenhum item | Se preferir, conte tudo para a gente na conversa. |
-| 1 item | 1 ponto identificado. Ele já pode ir na sua mensagem. |
-| 2 ou mais | [n] pontos identificados. Eles já podem ir na sua mensagem. |
-
-**Botão:** Identificar meus pontos de atenção
+**Botão:** Analisar meus gargalos no WhatsApp
 
 ---
 
-## 4. Manifesto
+## 3. O Método IQON
 
-**Título** (a segunda linha fica em itálico)
+**Tagline:** O Método IQON
+**Título:** Primeiro entendemos o que está impedindo seu negócio de avançar. Depois estruturamos o que ele realmente precisa.
+**Texto:** A IQON não começa perguntando qual serviço você quer comprar. Conduzimos um método estruturado em três etapas para identificar a causa real dos gargalos, desenhar a solução necessária e coordenar a execução com inteligência.
 
-O mercado está cheio de gente que posta.\
-*A IQON existe para construir.*
+### Etapa 01 — Raio-X: diagnóstico do negócio
+- Investigamos como sua empresa atrai novos clientes e se diferencia da concorrência
+- Analisamos como comunica seu valor e constrói autoridade na presença digital
+- Analisamos como chegam os contatos, tempo de resposta e qualificação dos leads
+- Como funciona o processo de vendas e o preparo da equipe comercial
+- Mapeamos rotinas operacionais ou administrativas que prejudicam a experiência do cliente
+- *Resultado:* Leitura clara do cenário, dos gargalos prioritários e das oportunidades reais — sem questionários genéricos.
 
-**Texto**
+### Etapa 02 — Solução sob medida: plano de ação
+- Sem pacotes engessados: combinamos apenas as frentes que atacam os gargalos identificados
+- Definição precisa do problema diagnosticado e do objetivo central a alcançar
+- Detalhamento transparente dos entregáveis incluídos e do que não faz parte do escopo
+- Alinhamento prévio das responsabilidades da IQON e da sua equipe
+- Investimento estruturado de acordo com a complexidade e a escala do plano aprovado
+- *Resultado:* Você entende exatamente por que cada frente foi recomendada e como ela se conecta ao problema.
 
-Uma marca não cresce porque publicou mais uma arte na terça-feira.
-
-Cresce quando as pessoas certas entendem quem ela é, reconhecem seu valor e encontram uma razão para começar uma conversa.
-
-É por isso que a IQON não separa posicionamento, conteúdo, mídia e atendimento em departamentos que não conversam.
-
-*Construímos o caminho inteiro.*
-
-### Método acima de opinião
-
-Não criamos por criar.
-
-Toda decisão tem uma razão estratégica. Você pode perguntar, discordar e participar do processo. Se houver um argumento melhor, a estratégia muda.
-
-*Método não é fazer tudo igual. É saber por que cada escolha existe.*
-
-### Autenticidade acima de performance vazia
-
-Sua marca não precisa fingir ser algo que não é para parecer interessante.
-
-A IQON organiza a comunicação, mas preserva aquilo que só você pode oferecer: sua experiência, sua voz e a realidade do seu negócio.
-
-*A gente estrutura. Você continua sendo você.*
-
-### Posicionamento acima de volume
-
-Não trabalhamos para preencher um calendário.
-
-Cada conteúdo precisa cumprir uma função: explicar, diferenciar, gerar percepção, criar confiança ou conduzir uma próxima ação.
-
-*Mais conteúdo não é necessariamente mais presença.*
-
-### Marketing não termina no anúncio
-
-Uma campanha pode levar alguém até você. Uma comunicação pode fazer essa pessoa prestar atenção.
-
-Mas é a experiência depois do clique que decide o que acontece a seguir.
-
-*Por isso, estratégia, mídia e atendimento precisam conversar.*
+### Etapa 03 — Execução estratégica: acompanhamento e evolução
+- Planejamento de atividades, cronograma e alinhamento de responsabilidades
+- Implementação técnica e estratégica das frentes aprovadas
+- Comunicação direta e acompanhamento de indicadores coerentes com o escopo
+- Análise constante de dados para calibrar mensagens e otimizar rotas com agilidade
+- *Resultado:* Método rigoroso, transparência e melhoria contínua — sem promessas vazias de resultado milagroso.
 
 ---
 
-## 5. Sistema IQON (âncora "Método")
+## 4. Frentes de Atuação Modulares
 
-**Título:** Quatro partes. Uma estratégia.
+**Título:** Capacidades modulares combinadas para o momento do seu negócio.
+**Texto:** A IQON não vende um cardápio engessado de serviços desconexos. Nossas especialidades atuam como frentes modulares que são combinadas e coordenadas sob medida após o diagnóstico.
 
-**Texto:** A IQON reúne as principais etapas da presença digital em uma única operação estratégica.
+1. **Estratégia e Posicionamento**
+   - *Headline:* Para sua marca deixar de ser comparada por preço e passar a ser escolhida.
+   - *Público:* Para empresas que entregam serviços de excelência, mas não conseguem comunicar seu diferencial e acabam disputando por preço.
+   - *O que contempla:* Imersão profunda no ecossistema e modelo de negócio; definição de posicionamento estratégico e proposta única de valor; tom de voz, identidade verbal e mensagens-chave; direcionamento estratégico da presença.
+   - *Impacto:* Sua empresa ganha clareza sobre seu valor e uma razão evidente para ser a escolha do cliente.
 
-| Parte | Texto | Resultado (em itálico, após a seta) |
-| --- | --- | --- |
-| 01. Posicionamento | Primeiro, entendemos o que torna sua empresa relevante e como isso precisa ser percebido. | Você deixa de parecer apenas mais uma opção. |
-| 02. Conteúdo | Transformamos esse posicionamento em uma presença que informa, diferencia e permanece na memória. | Seu Instagram passa a trabalhar a favor da sua marca. |
-| 03. Tráfego | Colocamos a mensagem diante das pessoas certas e usamos os dados para otimizar o que está funcionando. | Mídia deixa de ser simplesmente “impulsionar”. |
-| 04. Atendimento | Organizamos a experiência depois do contato para que oportunidades não sejam perdidas por falta de processo. | A conversa passa a ter direção. |
+2. **Conteúdo e Autoridade**
+   - *Headline:* Para construir consistência, desejo e confiança sem transformar você em escravo das redes.
+   - *Público:* Para negócios que precisam se posicionar com autoridade digital, mas não têm tempo nem método para criar conteúdos estratégicos.
+   - *O que contempla:* Planejamento editorial estratégico; roteiros estruturados para vídeos e Reels persuasivos; copywriting estratégico e mensagens que constroem valor; direção criativa de comunicação.
+   - *Impacto:* Cada conteúdo passa a cumprir um papel claro: diferenciar, gerar autoridade e atrair o cliente certo.
 
-**Fechamento** (em itálico): Uma estratégia só funciona quando as partes puxam para o mesmo lado.
+3. **Aquisição e Performance**
+   - *Headline:* Para conectar seu negócio às pessoas certas através de campanhas com engenharia e dados.
+   - *Público:* Para empresas que querem estruturar mídia paga com método, mensuração técnica e previsibilidade de oportunidades.
+   - *O que contempla:* Planejamento e estruturação de campanhas no Meta Ads e Google Ads; engenharia de públicos e segmentação qualificada; parametrização técnica de mensuração; análise profunda de métricas e otimização de verba.
+   - *Impacto:* Mídia paga deixa de ser 'apertar botões' e passa a ser um motor de aquisição orientado a dados reais.
 
-**Botão:** Conversar sobre a minha marca
+4. **Presença e Organização Operacional**
+   - *Headline:* Para manter a regularidade da comunicação digital e dar fluidez às rotinas do negócio.
+   - *Público:* Para empresas que precisam organizar rotinas, publicações e o suporte ao relacionamento com clientes.
+   - *O que contempla:* Organização e gestão do calendário de presença digital; agendamento e publicação de conteúdos; apoio na organização de demandas, agendas e rotinas operacionais; estruturação dos processos de relacionamento com clientes.
+   - *Impacto:* Sua marca mantém consistência no mercado e a operação ganha previsibilidade sem sobrecarregar você.
 
----
+5. **Processo Comercial e Conversão**
+   - *Headline:* Para transformar oportunidades recebidas em vendas concretas com agilidade e método.
+   - *Público:* Para negócios que recebem contatos, mas percebem oportunidades esfriando por demora, falta de processo ou equipe sem preparo.
+   - *O que contempla:* Diagnóstico do atendimento e identificação de gargalos de conversão; estruturação de scripts e fluxos de qualificação no WhatsApp; padronização das etapas comerciais; treinamento e orientação de equipe.
+   - *Impacto:* Sua equipe sabe exatamente como atender, qualificar e conduzir cada oportunidade com método e segurança.
 
-## 6. Serviços
-
-**Título:** Do primeiro olhar à conversa comercial.
-
-**Texto:** O que cada parte da estratégia entrega na prática, e para quem ela faz mais diferença.
-
-### 01. Posicionamento — Pare de parecer igual.
-
-- **Para quem:** Para empresas que entregam mais do que conseguem comunicar.
-- **O que fazemos:** Imersão na marca, definição de posicionamento, tom de voz, identidade verbal e direcionamento estratégico da comunicação.
-- **Resultado** (em itálico)**:** Sua marca passa a ter algo claro para dizer — e uma razão clara para ser lembrada.
-
-### 02. Conteúdo — Não poste por postar.
-
-- **Para quem:** Para empresas que precisam manter presença sem transformar o dono em produtor de conteúdo.
-- **O que fazemos:** Planejamento editorial, conteúdo para feed, legendas, roteiros de Reels, aprovação, publicação e organização da presença digital.
-- **Resultado** (em itálico)**:** Cada conteúdo passa a ter uma função dentro da estratégia.
-
-### 03. Tráfego pago — Não é sobre colocar dinheiro no botão.
-
-- **Para quem:** Para empresas que querem usar mídia paga com estratégia, acompanhamento e otimização.
-- **O que fazemos:** Planejamento, configuração, gestão e otimização de campanhas no Meta Ads e Google Ads, com públicos, mensuração e acompanhamento de desempenho.
-- **Resultado** (em itálico)**:** Sua verba trabalha com uma estratégia por trás — e não sozinha.
-
-### 04. Atendimento e conversão — O clique não é o fim.
-
-- **Para quem:** Para empresas que recebem contatos, mas percebem oportunidades esfriando no WhatsApp.
-- **O que fazemos:** Aula estratégica de atendimento e Manual de Atendimento WhatsApp com scripts, direcionamentos e tratamento de objeções.
-- **Resultado** (em itálico)**:** Sua equipe sabe o que fazer quando a oportunidade chega.
-
-### Também fazemos
-
-| Serviço | Descrição |
-| --- | --- |
-| Google e SEO local | Para sua empresa ser encontrada por quem já está procurando pelo que você oferece. |
-| Landing pages | Páginas pensadas para transformar atenção em ação. |
-| Diagnóstico digital | Uma visão externa sobre marca, Instagram, Google, WhatsApp, oferta e jornada do cliente. |
-| Agentes de IA | Automação para atendimento, suporte, pós-venda e reativação — quando fizer sentido para a operação. |
-| Identidade visual | Para empresas que precisam alinhar a aparência da marca ao posicionamento que querem construir. |
-
-### Escopo e combinados
-
-**Título:** Sem pacote misterioso. Sem letra miúda.
-
-**Texto:** Antes de começar, você sabe exatamente o que a IQON assume, o que depende da sua equipe e o que não faz parte da gestão.
-
-**Botão:** Perguntar sobre o escopo (abre o WhatsApp com a mensagem de dúvida)
-
-**Está incluso**
-
-- Imersão e briefing de marca
-- Planejamento estratégico
-- Calendário editorial
-- Conteúdos para feed
-- Legendas
-- Roteiros de Reels
-- Aprovação e ajustes
-- Agendamento e publicação
-- Gestão de Meta Ads
-- Gestão de Google Ads
-- Direção estratégica para Stories
-- Aula de atendimento
-- Manual de Atendimento WhatsApp
-- Relatório mensal de desempenho
-
-**O que depende de você**
-
-| Item | Observação |
-| --- | --- |
-| Verba de mídia | O investimento em anúncios é pago diretamente à Meta ou ao Google. |
-| Stories | A IQON orienta o que comunicar e como gravar. A presença espontânea da marca continua sendo sua. |
-| Identidade visual | Pode ser desenvolvida separadamente quando necessário. |
+### Como estruturamos sua proposta sob medida
+- **Solução desenhada para o problema real:** Contratação modular focada no gargalo prioritário.
+- **Entregáveis e limites explícitos:** Clareza total sobre o que está e não está incluso.
+- **Responsabilidades compartilhadas:** IQON assume inteligência e execução; verba de anúncios paga diretamente às plataformas.
+- **Acompanhamento contínuo e sem amarras:** Sem fidelidade forçada; parceria sustentada por método e resultados.
 
 ---
 
-## 7. Processo
+## 5. Manifesto e Princípios
 
-**Título:** Você sabe o que acontece depois que chama a IQON.
+**Título:** A maioria das empresas oferece pacotes prontos. A IQON começa entendendo o seu negócio.
 
-| Etapa | Texto | Fechamento (em itálico) |
-| --- | --- | --- |
-| 01. Entendemos | Você conta o momento da empresa, os desafios e onde sente que a comunicação não está funcionando. | Sem proposta pronta antes de entender o cenário. |
-| 02. Mergulhamos | Fazemos a imersão na marca, organizamos referências, público, diferenciais, tom de voz e objetivos. | Antes de produzir, entendemos. |
-| 03. Construímos | Transformamos a estratégia em posicionamento, conteúdo, campanhas e direcionamentos comerciais. | Cada frente conversa com a outra. |
-| 04. Colocamos no ar | Publicamos os conteúdos e ativamos as campanhas planejadas. | A estratégia começa a encontrar o mercado. |
-| 05. Analisamos | Acompanhamos dados, identificamos o que merece atenção e ajustamos a rota. | Marketing não é uma peça pronta. É um processo de aprendizado. |
+**Princípios:**
+1. **Diagnóstico antes da prescrição** — Investigar primeiro para investir com precisão.
+2. **Método acima de opiniões e fórmulas prontas** — Método não é fazer tudo igual. É saber por que cada escolha existe.
+3. **Posicionamento acima de volume** — Mais conteúdo não é mais presença. É preciso ser escolhida.
+4. **O marketing não termina no anúncio** — Por isso atração, processos e conversão precisam falar a mesma língua.
 
 ---
 
-## 8. Resultados
+## 6. Equipe
+
+**Título:** Três especialidades sêniores. Uma única estratégia.
+**Texto:** Três frentes de inteligência que atuam a partir do mesmo diagnóstico. Em vez de contratar fornecedores desconectados que puxam para direções diferentes, você conta com uma equipe integrada que compreende o ecossistema completo da sua empresa.
+
+- **Agatha — Estratégia e Conteúdo**
+  Responsável pela inteligência estratégica de marketing e comunicação. Transforma o diagnóstico do negócio em uma direção coerente de marca, narrativas editoriais e copywriting persuasivo para construir autoridade e alta percepção de valor.
+
+- **Welington — Tráfego Pago e Performance**
+  Responsável pela aquisição de público qualificado e engenharia de campanhas. Estrutura estratégias no Meta Ads e Google Ads, parametrização técnica de mensuração e análise profunda de métricas para conectar o negócio às pessoas certas e otimizar investimentos.
+
+- **Alanna — Estratégia Comercial e Estruturação Operacional**
+  Responsável por identificar necessidades comerciais e operacionais. Estrutura soluções para presença digital, rotinas de suporte e aprimoramento do processo comercial — incluindo qualificação de leads, roteiros de atendimento e treinamento de equipe.
+
+---
+
+## 7. Como Funciona a Parceria (Resultados)
 
 **Título:** O resultado não acontece em uma linha reta.
-
-**Texto**
-
-Cada empresa parte de um lugar diferente. Segmento, oferta, concorrência, histórico, investimento e capacidade comercial influenciam o ritmo.
-
-Por isso, não vendemos uma fórmula que diz quando você terá resultado.
-
-Construímos as condições para que sua marca tenha mais clareza, alcance, confiança e capacidade de conversão.
-
-**Ilustração:** um traço que avança, faz uma volta e segue (sem eixo, escala de tempo ou tendência de subida).
-
-**Frase de fechamento** (em itálico): Não prometemos milagre. Construímos método.
+- Cada empresa parte de um ponto diferente: histórico, ticket, maturidade comercial e concorrência influenciam o ritmo.
+- A IQON não promete atalhos mágicos ou faturamento garantido: nosso compromisso é com diagnóstico aprofundado, execução técnica, transparência e melhoria contínua baseada em dados.
+- *Fechamento:* Não vendemos atalhos. Construímos método.
 
 ---
 
-## 9. Equipe
+## 8. Perguntas Frequentes (FAQ)
 
-**Título:** Quem pensa, executa e acompanha a sua estratégia.
-
-**Texto:** Três especialidades diferentes, trabalhando sobre a mesma marca — e não três fornecedores independentes.
-
-| Pessoa | Função | Descrição |
-| --- | --- | --- |
-| Agatha | Estratégia e conteúdo | Mergulha na marca, transforma posicionamento em comunicação e conduz a estratégia editorial. |
-| Welinton | Tráfego e performance | Estrutura, monitora e otimiza campanhas para colocar a estratégia diante das pessoas certas. |
-| Alanna | Atendimento e conversão | Estrutura a experiência comercial no WhatsApp para que a oportunidade recebida tenha um processo para seguir. |
-
-**Fechamento** (em itálico)
-
-Uma equipe pequena o suficiente para conhecer sua marca.\
-Especializada o suficiente para cuidar de cada etapa.
+1. A IQON trabalha com pacotes prontos de serviços?
+2. Preciso contratar todas as frentes de uma vez?
+3. Posso contratar apenas uma frente específica?
+4. Como funciona a conversa de diagnóstico (Raio-X)?
+5. Como é definido o investimento?
+6. A verba de anúncios (mídia paga) está inclusa no valor?
+7. A IQON atende empresas do meu segmento?
+8. Como funciona o acompanhamento após o início?
+9. A IQON garante resultados de vendas ou faturamento?
+10. Existe fidelidade ou contrato mínimo?
 
 ---
 
-## 10. Dúvidas
-
-**Título:** O que você precisa saber antes de começar.
-
-**Texto:** Se ainda ficou alguma dúvida, pergunte direto para a equipe.
-
-**Botão:** Perguntar no WhatsApp (abre o WhatsApp com a mensagem de dúvida)
-
-### Quanto custa trabalhar com a IQON?
-
-O investimento depende do que sua empresa precisa construir e da complexidade da operação. Primeiro entendemos o cenário; depois apresentamos uma proposta coerente com o trabalho necessário.
-
-### A verba dos anúncios está inclusa?
-
-Não. A gestão faz parte do trabalho da IQON, mas a verba de mídia é paga diretamente por você à Meta ou ao Google.
-
-### Vocês fazem meus Stories?
-
-A IQON cria a direção estratégica, mas os Stories continuam tendo a sua voz. Ensinamos o que comunicar, como gravar e como transformar o cotidiano da empresa em conteúdo.
-
-### Em quanto tempo aparecem resultados?
-
-Não existe um prazo universal. Algumas empresas já possuem oferta, marca, histórico e estrutura comercial preparados; outras precisam primeiro organizar essas bases.
-
-A IQON acompanha o processo desde o início e ajusta a estratégia conforme os dados e a resposta do mercado.
-
-Não usamos uma contagem regressiva para prometer resultado.
-
-### Vocês garantem vendas?
-
-Não. Nenhuma agência controla todas as variáveis que determinam uma venda.
-
-O nosso compromisso é com aquilo que está sob nossa responsabilidade: estratégia, execução, acompanhamento e otimização.
-
-### Existe contrato mínimo?
-
-Não. Depois de entender a necessidade da sua empresa, apresentamos um contrato com escopo e combinados claros, sem prazo mínimo.
-
-Você não fica preso: qualquer um dos lados pode encerrar o contrato com um mês de aviso prévio, sem multa.
-
-### Quanto eu preciso participar?
-
-Você participa onde a sua presença faz diferença: na imersão, nas aprovações e nos conteúdos que dependem da sua experiência.
-
-O planejamento e a execução ficam com a IQON.
-
-### Vocês atendem meu segmento?
-
-Nosso foco são negócios locais que dependem de confiança, percepção de valor e relacionamento para vender.
-
-Entre eles estão empresas de saúde, estética, gastronomia, hospitalidade, serviços e outros negócios locais.
-
-Se o seu segmento for diferente, conversamos sobre o cenário antes de dizer se existe aderência.
-
----
-
-## 11. Conversa (contato)
-
-**Título:** Sua marca já está trabalhando por você?
-
-**Texto**
-
-Conte como sua empresa está hoje.
-
-A equipe da IQON entende o cenário, identifica onde existem oportunidades e mostra como podemos trabalhar juntos.
-
-*Sem apresentação genérica. Sem proposta pronta antes da conversa.*
-
-**Garantias**
-
-- Você conversa com quem conduz o trabalho.
-- O escopo é definido antes da contratação.
-- A estratégia parte da realidade da sua empresa.
-
-**Instagram**
-
-- **Frase:** Antes de conversar com a gente, conheça como pensamos.
-- **Link:** Acompanhe a IQON no Instagram
-
-### Formulário
-
-- **Título:** Vamos começar pelo que está acontecendo hoje.
-- **Texto:** Responda apenas o que quiser. O que você preencher será organizado na mensagem do WhatsApp.
-- **Pergunta:** O que mais precisa mudar hoje na sua empresa?
-- **Opções:** Dependo demais de indicação / Meu Instagram não representa meu negócio / Minha marca parece igual às concorrentes / Já investi em anúncios sem retorno claro / Recebo contatos, mas eles não avançam / Ainda não sei exatamente onde está o problema
-- **Campos:** Nome, Empresa, Cidade, Segmento (exemplo dentro do campo: "Ex.: clínica de estética")
-- **Botão:** Quero conversar com a IQON
-- **Nota abaixo do botão:** O WhatsApp será aberto com a mensagem preenchida. Nada é enviado sem sua confirmação.
-
-As cinco primeiras opções são as mesmas dores da seção 3: marcar em um lugar marca no outro.
-
----
-
-## Rodapé
-
-- **Logo:** IQON
-- **Assinatura** (em itálico): Marketing para quem não para.
-- **Descrição:** Posicionamento, conteúdo, tráfego e atendimento trabalhando juntos para construir marcas mais claras, relevantes e preparadas para crescer.
-- **Navegação:** Método, Serviços, Equipe, Dúvidas
-- **Contato:** WhatsApp (51) 98434-6415 e Instagram @iqon.agencia
-- **Linha final:** © 2026 IQON. Todos os direitos reservados.
-
----
-
-## Botão fixo no celular
-
-Aparece depois que o visitante passa da abertura e some na seção de contato e no rodapé.
-
-- **Botão:** Quero conversar com a IQON
-
----
-
-## Mensagens do WhatsApp
-
-**Mensagem padrão** (qualquer botão de conversa, quando nada foi marcado ou preenchido):
-
-```
-Olá, IQON! Quero conversar sobre o marketing da minha empresa.
-```
-
-**Mensagem completa** (campos vazios são omitidos):
-
-```
-Olá, IQON! Quero conversar sobre o marketing da minha empresa.
-
-Nome: [nome]
-
-Empresa: [empresa]
-
-Segmento: [segmento]
-
-Cidade: [cidade]
-
-Hoje, minhas principais dificuldades são:
-
-• [dificuldade 1]
-• [dificuldade 2]
-• [dificuldade 3]
-```
-
-Com um único item marcado, o título da lista fica no singular: "Hoje, minha principal dificuldade é:". Cada item usa o texto em primeira pessoa das opções do formulário (por exemplo, "Dependo demais de indicação"), mesmo quando foi marcado na seção 3.
-
-**Botões "Perguntar sobre o escopo" e "Perguntar no WhatsApp":**
-
-```
-Olá, IQON! Tenho uma dúvida antes de conversar sobre minha empresa.
-```
-
----
-
-## Seções prontas, ocultas até terem conteúdo real
-
-Aparecem automaticamente quando houver depoimentos ou projetos cadastrados em `content/proof.ts`.
-
-- **Projetos, título:** Marcas em construção
-- **Projetos, texto:** Alguns dos trabalhos conduzidos pela IQON.
-- **Projetos, link de cada trabalho:** Ver o projeto
-- **Depoimentos, título:** O que dizem as marcas que a IQON conduz
-
----
-
-## Textos para leitores de tela
-
-Não aparecem na tela, mas são lidos por quem navega com leitor de tela.
-
-- **Atalho no topo:** Pular para o conteúdo
-- **Logo:** IQON, voltar ao início
-- **Botões do menu no celular:** Abrir menu / Fechar menu
-- **Links que abrem o WhatsApp:** (abre o WhatsApp em uma nova aba)
-- **Botão do formulário:** Quero conversar com a IQON pelo WhatsApp (abre em uma nova aba)
-- **Link do Instagram no contato:** (@iqon.agencia, abre em uma nova aba)
-- **Demais links externos:** (abre em uma nova aba)
-- **Grupo de itens da seção 3:** Pontos que parecem familiares
-- **Diagrama do sistema:** Diagrama com três círculos sobrepostos, presença, autoridade e conversão, e a sua marca no centro, onde os três se encontram.
-
----
-
-## Onde alterar cada texto
-
-Toda a copy fica em `content/`. Os componentes em `components/` só cuidam do layout.
-
-| Parte da página | Arquivo |
-| --- | --- |
-| Título da aba, descrição, assinatura, menu, botões, mensagens do WhatsApp, abertura e rodapé | `content/site.ts` |
-| Nomes na linha da equipe e seção Equipe | `content/team.ts` |
-| Seção 2 e rótulos do diagrama | `content/fronts.ts` |
-| Seção 3 (título, texto, status e itens) e opções do formulário | `content/pains.ts` |
-| Manifesto e princípios | `content/positioning.ts` |
-| Quatro partes. Uma estratégia. | `content/system.ts` |
-| Serviços, "Também fazemos" e escopo | `content/services.ts` |
-| Processo e Resultados | `content/process.ts` |
-| Dúvidas | `content/faq.ts` |
-| Conversa, formulário e convite do Instagram | `content/contact.ts` |
-| Depoimentos e projetos | `content/proof.ts` |
-| Formato da mensagem completa do WhatsApp | `lib/whatsapp.ts` |
-| Textos para leitores de tela | nos próprios componentes |
-
-Nos arquivos de conteúdo, o travessão aparece como ` —`. O ` ` é um espaço que não quebra linha: ele impede que o travessão comece uma linha nova. Mantenha-o ao editar.
+## 9. Chamada Final & Formulário de Diagnóstico
+
+**Título:** Primeiro entendemos o que está impedindo seu negócio de avançar.
+**Subtítulo:** Depois estruturamos o que ele realmente precisa.
+**Texto:** Converse com a equipe da IQON para realizar um Raio-X da sua empresa, identificar gargalos reais e traçar os próximos passos com clareza estratégica.
+**Botão:** Iniciar diagnóstico no WhatsApp

@@ -7,65 +7,105 @@ import { buttonStyles } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
 import { diagnosis, pains } from "@/content/pains";
 import { ctas } from "@/content/site";
+import { cn } from "@/lib/cn";
 
 export function PainPoints() {
   const { selected, isSelected, toggle } = useDiagnostic();
-  // Só os pontos desta seção: a opção "ainda não sei" existe apenas no formulário final.
   const markedCount = pains.filter((pain) => selected.includes(pain.id)).length;
 
   return (
     <section
-      id="desafios"
-      aria-labelledby="desafios-title"
+      id="gargalos"
+      aria-labelledby="gargalos-title"
       className="on-light section-y bg-nevoa text-tinta"
     >
-      <Container className="grid gap-x-12 gap-y-10 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <h2 id="desafios-title" className="font-display text-h2 text-balance">
-            {diagnosis.title}
-          </h2>
-          <p className="mt-6 max-w-[30rem] text-lead text-pretty text-tinta-suave">
+      <Container>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <p className="text-label font-medium uppercase tracking-wider text-violeta">
+              {diagnosis.tagline}
+            </p>
+            <h2 id="gargalos-title" className="mt-1.5 font-display text-h2 text-balance">
+              {diagnosis.title}
+            </h2>
+          </div>
+          <p className="text-small text-tinta-suave max-w-md">
             {diagnosis.intro}
           </p>
         </div>
 
-        <fieldset className="lg:col-span-7 lg:col-start-6 lg:row-span-2">
-          <legend className="sr-only">{diagnosis.legend}</legend>
-          <ul className="border-t border-tinta/15">
-            {pains.map((pain) => (
-              <li key={pain.id} className="border-b border-tinta/15">
-                <label className="group -mx-2 flex cursor-pointer items-start gap-5 rounded-2xl px-2 py-6 transition-colors duration-300 hover:bg-white/50 has-checked:bg-white/70 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-violeta motion-reduce:transition-none sm:-mx-4 sm:gap-6 sm:px-4 sm:py-7">
-                  <input
-                    type="checkbox"
-                    className="sr-only"
-                    checked={isSelected(pain.id)}
-                    onChange={() => toggle(pain.id)}
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-full border-[1.5px] border-tinta/30 text-white transition-colors duration-300 group-hover:border-violeta/60 group-has-checked:border-violeta group-has-checked:bg-violeta motion-reduce:transition-none"
-                  >
-                    <Check
-                      className="size-4 scale-50 opacity-0 transition duration-300 group-has-checked:scale-100 group-has-checked:opacity-100 motion-reduce:transition-none"
-                      strokeWidth={2.5}
-                    />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block font-display text-h4 text-tinta">{pain.title}</span>
-                    <span className="mt-1.5 block text-body text-tinta-suave">{pain.detail}</span>
-                  </span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        </fieldset>
+        {/* Bento Grid compacto de gargalos clicáveis */}
+        <div className="mt-8 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3">
+          {pains.map((pain) => {
+            const checked = isSelected(pain.id);
+            return (
+              <label
+                key={pain.id}
+                className={cn(
+                  "group relative flex cursor-pointer flex-col justify-between rounded-2xl border p-5 transition-all duration-200 select-none",
+                  checked
+                    ? "border-violeta bg-white shadow-sm ring-1 ring-violeta"
+                    : "border-tinta/10 bg-white/60 hover:border-violeta/40 hover:bg-white",
+                )}
+              >
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={checked}
+                  onChange={() => toggle(pain.id)}
+                />
 
-        <div className="lg:col-span-5 lg:self-end">
-          <p aria-live="polite" className="text-small text-tinta-suave">
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className={cn(
+                        "rounded-full px-2.5 py-0.5 text-label font-medium uppercase tracking-wider transition-colors",
+                        checked
+                          ? "bg-violeta/10 text-violeta font-semibold"
+                          : "bg-tinta/5 text-tinta-suave",
+                      )}
+                    >
+                      {pain.tag}
+                    </span>
+
+                    <span
+                      aria-hidden="true"
+                      className={cn(
+                        "grid size-5 place-items-center rounded-full border transition-all",
+                        checked
+                          ? "border-violeta bg-violeta text-white"
+                          : "border-tinta/25 text-transparent group-hover:border-violeta/60",
+                      )}
+                    >
+                      <Check className="size-3" strokeWidth={3} />
+                    </span>
+                  </div>
+
+                  <h3 className="mt-3.5 font-sans text-h4 font-medium text-tinta">
+                    {pain.title}
+                  </h3>
+
+                  <p className="mt-1.5 text-small text-pretty text-tinta-suave">
+                    {pain.detail}
+                  </p>
+                </div>
+              </label>
+            );
+          })}
+        </div>
+
+        {/* Barra de ação compacta */}
+        <div className="mt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3.5 rounded-2xl border border-tinta/10 bg-white/70 px-5 py-3.5 backdrop-blur-sm">
+          <p aria-live="polite" className="text-small font-medium text-tinta">
             {diagnosis.status(markedCount)}
           </p>
+
           <WhatsAppCta
-            className={buttonStyles({ variant: "brand", size: "lg", className: "mt-5 w-full sm:w-auto" })}
+            className={buttonStyles({
+              variant: "brand",
+              size: "md",
+              className: "shrink-0",
+            })}
           >
             {ctas.diagnosis}
           </WhatsAppCta>

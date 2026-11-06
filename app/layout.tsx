@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "/images/og.png",
         width: 1200,
         height: 630,
-        alt: "IQON. Marketing para quem não para. Agência de marketing estratégico.",
+        alt: "IQON. Primeiro o diagnóstico. Depois, a solução certa. Estratégia e soluções para negócios.",
       },
     ],
   },

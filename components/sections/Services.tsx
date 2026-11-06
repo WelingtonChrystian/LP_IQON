@@ -1,123 +1,143 @@
+"use client";
+
+import { useState } from "react";
+import { Check, ArrowRight } from "lucide-react";
+import { WhatsAppCta } from "@/components/diagnostic/WhatsAppCta";
 import { buttonStyles } from "@/components/ui/button";
 import { Container } from "@/components/ui/Container";
-import { SectionIntro } from "@/components/ui/SectionIntro";
 import {
-  additionalServices,
-  additionalServicesTitle,
-  coreServices,
-  scope,
-  servicesSection,
+  actionModules,
+  customScope,
+  frontsOfActionSection,
 } from "@/content/services";
-import { ctas, whatsappMessages } from "@/content/site";
-import { whatsappHref } from "@/lib/whatsapp";
+import { ctas } from "@/content/site";
+import { cn } from "@/lib/cn";
 
 export function Services() {
+  const [activeTab, setActiveTab] = useState(0);
+  const current = actionModules[activeTab];
+
   return (
     <section
-      id="servicos"
-      aria-labelledby="servicos-title"
+      id="frentes"
+      aria-labelledby="frentes-title"
       className="on-light section-y bg-papel text-tinta"
     >
       <Container>
-        <SectionIntro
-          id="servicos-title"
-          tone="light"
-          title={servicesSection.title}
-          intro={servicesSection.intro}
-        />
-
-        <ol className="mt-14 border-t border-tinta/15 lg:mt-20">
-          {coreServices.map((service, index) => (
-            <li
-              key={service.id}
-              className="grid gap-6 border-b border-tinta/15 py-10 lg:grid-cols-12 lg:gap-12 lg:py-14"
-            >
-              <div className="lg:col-span-5">
-                <h3>
-                  <span className="block text-small font-medium text-violeta">
-                    <span aria-hidden="true">{String(index + 1).padStart(2, "0")} · </span>
-                    {service.name}
-                    <span className="sr-only">: </span>
-                  </span>
-                  <span className="mt-3 block font-display text-h3 text-balance">{service.title}</span>
-                </h3>
-                <p className="mt-3 max-w-[28rem] text-body text-pretty text-tinta-suave">
-                  {service.audience}
-                </p>
-              </div>
-              <div className="lg:col-span-7">
-                <p className="text-small font-medium text-tinta-suave">
-                  {servicesSection.deliversLabel}
-                </p>
-                <p className="mt-2 text-body text-pretty text-tinta">{service.delivers}</p>
-                <p className="mt-6 font-display text-h4 italic text-pretty text-tinta">
-                  {service.outcome}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-20 grid gap-8 lg:mt-24 lg:grid-cols-12 lg:gap-12">
-          <h3 className="font-display text-h3 lg:col-span-4">{additionalServicesTitle}</h3>
-          <ul className="grid gap-x-12 gap-y-8 sm:grid-cols-2 lg:col-span-8">
-            {additionalServices.map((service) => (
-              <li key={service.name}>
-                <p className="font-medium text-tinta">{service.name}</p>
-                <p className="mt-1.5 text-small text-pretty text-tinta-suave">{service.text}</p>
-              </li>
-            ))}
-          </ul>
+        <div className="max-w-2xl">
+          <p className="text-label font-medium uppercase tracking-wider text-violeta">
+            {frontsOfActionSection.tagline}
+          </p>
+          <h2 id="frentes-title" className="mt-1.5 font-display text-h2 text-balance">
+            {frontsOfActionSection.title}
+          </h2>
+          <p className="mt-3 text-lead text-pretty text-tinta-suave">
+            {frontsOfActionSection.intro}
+          </p>
         </div>
 
-        <div className="on-dark grain mt-20 rounded-[2rem] bg-abismo p-7 text-luz sm:p-12 lg:mt-24 lg:p-16">
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-5">
-              <h3 className="font-display text-h3 text-balance">{scope.title}</h3>
-              <p className="mt-4 text-body text-pretty text-luz-suave">{scope.intro}</p>
-              <a
-                href={whatsappHref(whatsappMessages.question)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={buttonStyles({ variant: "outline-dark", className: "mt-8" })}
+        {/* Seletor em Abas / Pills compactas */}
+        <div className="mt-8 flex flex-wrap gap-2 border-b border-tinta/10 pb-4">
+          {actionModules.map((module, index) => {
+            const isActive = index === activeTab;
+            return (
+              <button
+                key={module.id}
+                type="button"
+                onClick={() => setActiveTab(index)}
+                className={cn(
+                  "rounded-full px-4 py-2 text-small font-medium transition-all select-none cursor-pointer",
+                  isActive
+                    ? "bg-violeta text-white shadow-sm"
+                    : "bg-tinta/5 text-tinta-suave hover:bg-tinta/10 hover:text-tinta",
+                )}
               >
-                {ctas.scope}
-                <span className="sr-only"> (abre o WhatsApp em uma nova aba)</span>
-              </a>
+                {module.shortName}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Card Interativo da Frente Ativa */}
+        <div className="mt-5 rounded-2xl border border-tinta/10 bg-white p-6 sm:p-8 shadow-xs">
+          <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-5 flex flex-col justify-between">
+              <div>
+                <span className="text-label font-semibold uppercase tracking-wider text-violeta">
+                  Frente 0{activeTab + 1}
+                </span>
+                <h3 className="mt-1 font-sans text-h3 font-medium text-tinta">
+                  {current.name}
+                </h3>
+                <p className="mt-2.5 text-body font-medium text-tinta leading-snug">
+                  {current.headline}
+                </p>
+              </div>
+
+              <div className="mt-5 rounded-xl bg-nevoa/60 p-3.5">
+                <p className="text-label font-semibold uppercase tracking-wider text-tinta-suave">
+                  Para quem é:
+                </p>
+                <p className="mt-1 text-small text-tinta-suave">
+                  {current.audience}
+                </p>
+              </div>
             </div>
 
-            <div className="lg:col-span-7">
-              <h4 className="text-small font-medium text-lilas">{scope.includedTitle}</h4>
-              <ul className="mt-5 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
-                {scope.included.map((item) => (
-                  <li key={item} className="flex gap-3.5 text-body">
-                    <span
-                      aria-hidden="true"
-                      className="mt-[0.55em] size-2.5 shrink-0 rounded-full bg-lilas"
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="lg:col-span-7 flex flex-col justify-between border-t border-tinta/10 pt-5 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
+              <div>
+                <p className="text-label font-semibold uppercase tracking-wider text-tinta-suave">
+                  O que contempla:
+                </p>
+                <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+                  {current.delivers.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 rounded-lg bg-nevoa/40 px-3 py-2 text-small text-tinta"
+                    >
+                      <Check className="size-3.5 shrink-0 text-violeta" strokeWidth={2.5} />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between border-t border-tinta/10 pt-4">
+                <p className="text-small font-medium text-violeta">
+                  ✦ {current.outcome}
+                </p>
+                <WhatsAppCta
+                  className="inline-flex items-center gap-1.5 text-small font-semibold text-tinta hover:text-violeta transition-colors"
+                >
+                  Consultar frente <ArrowRight className="size-4" />
+                </WhatsAppCta>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="mt-12 border-t border-lilas/15 pt-10 lg:mt-14">
-            <h4 className="text-small font-medium text-luz-suave">{scope.clientSideTitle}</h4>
-            <ul className="mt-5 grid gap-8 md:grid-cols-3">
-              {scope.clientSide.map(({ item, note }) => (
-                <li key={item} className="flex gap-3.5">
-                  <span
-                    aria-hidden="true"
-                    className="mt-[0.55em] size-2.5 shrink-0 rounded-full border border-luz-suave"
-                  />
-                  <span>
-                    <span className="block text-body text-luz">{item}</span>
-                    <span className="mt-1 block text-small text-pretty text-luz-suave">{note}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
+        {/* Como estruturamos a proposta sob medida — Grid de 4 pilares enxutos */}
+        <div className="mt-8 rounded-2xl bg-abismo p-6 text-luz sm:p-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-lilas/15 pb-4">
+            <h3 className="font-sans text-h4 font-medium text-luz">
+              {customScope.title}
+            </h3>
+            <WhatsAppCta className={buttonStyles({ variant: "outline-dark", size: "md" })}>
+              {ctas.scope}
+            </WhatsAppCta>
+          </div>
+
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {customScope.points.map((point) => (
+              <div key={point.title} className="rounded-xl border border-lilas/15 bg-noite-card/60 p-4">
+                <h4 className="text-small font-semibold text-lilas-claro">
+                  {point.title}
+                </h4>
+                <p className="mt-1.5 text-small text-luz-suave leading-relaxed">
+                  {point.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </Container>

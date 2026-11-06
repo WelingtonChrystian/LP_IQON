@@ -107,7 +107,7 @@ export function SystemDiagram({ className }: { className?: string }) {
         <span
           key={front.id}
           style={frontLabelPositions[index]}
-          className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-display leading-none text-luz [font-size:clamp(1rem,4.6cqw,1.875rem)] motion-safe:anim-fade-in [--delay:700ms]"
+          className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-medium leading-none text-luz [font-size:clamp(0.8125rem,3.4cqw,1.25rem)] motion-safe:anim-fade-in [--delay:700ms]"
         >
           {front.name}
         </span>
@@ -115,7 +115,7 @@ export function SystemDiagram({ className }: { className?: string }) {
 
       <span
         style={centerLabelPosition}
-        className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-display italic leading-none text-white [font-size:clamp(1.125rem,5cqw,2rem)] motion-safe:anim-fade-in [--delay:700ms]"
+        className="absolute -translate-x-1/2 -translate-y-1/2 whitespace-nowrap font-sans font-semibold tracking-tight leading-none text-white [font-size:clamp(0.9375rem,4cqw,1.375rem)] motion-safe:anim-fade-in [--delay:700ms]"
       >
         {frontsSection.center}
       </span>

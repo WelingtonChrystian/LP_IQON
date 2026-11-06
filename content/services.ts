@@ -1,130 +1,114 @@
 /**
- * Serviços (fonte: "Serviços Detalhados" e "Serviço Gestão de Mídias Sociais").
- * Confirme com a equipe antes de publicar qualquer alteração de escopo.
+ * Frentes de Atuação — Arquitetura modular sintetizada e escaneável.
  */
-export type Service = {
+export type ActionFront = {
   id: string;
-  /** Nome da frente de trabalho. */
+  shortName: string;
   name: string;
-  /** Frase de abertura do serviço. */
-  title: string;
-  /** Para quem é. */
+  headline: string;
   audience: string;
-  /** O que a IQON faz (as tarefas, para dar transparência). */
-  delivers: string;
-  /** O que muda para o cliente. */
+  delivers: string[];
   outcome: string;
 };
 
-export const servicesSection = {
-  title: "Do primeiro olhar à conversa comercial.",
-  intro: "O que cada parte da estratégia entrega na prática, e para quem ela faz mais diferença.",
-  deliversLabel: "O que fazemos",
+export const frontsOfActionSection = {
+  tagline: "Capacidades Modulares",
+  title: "Frentes combinadas para o seu momento.",
+  intro:
+    "A IQON não vende pacotes engessados. Nossas especialidades são combinadas após o diagnóstico do seu negócio.",
 };
 
-export const coreServices: Service[] = [
+export const actionModules: ActionFront[] = [
   {
-    id: "posicionamento",
-    name: "Posicionamento",
-    title: "Pare de parecer igual.",
-    audience: "Para empresas que entregam mais do que conseguem comunicar.",
-    delivers:
-      "Imersão na marca, definição de posicionamento, tom de voz, identidade verbal e direcionamento estratégico da comunicação.",
-    outcome: "Sua marca passa a ter algo claro para dizer\u00a0— e uma razão clara para ser lembrada.",
+    id: "estrategia",
+    shortName: "Estratégia & Marca",
+    name: "Estratégia e Posicionamento",
+    headline: "Para sua marca deixar de ser comparada por preço e passar a ser escolhida.",
+    audience: "Empresas com serviços de excelência que não conseguem comunicar seu diferencial.",
+    delivers: [
+      "Diagnóstico e proposta única de valor",
+      "Posicionamento estratégico de mercado",
+      "Identidade verbal, narrativa e tom de voz",
+      "Diferenciação clara da concorrência",
+    ],
+    outcome: "Sua empresa ganha autoridade e uma razão evidente para ser escolhida.",
   },
   {
     id: "conteudo",
-    name: "Conteúdo",
-    title: "Não poste por postar.",
-    audience:
-      "Para empresas que precisam manter presença sem transformar o dono em produtor de conteúdo.",
-    delivers:
-      "Planejamento editorial, conteúdo para feed, legendas, roteiros de Reels, aprovação, publicação e organização da presença digital.",
-    outcome: "Cada conteúdo passa a ter uma função dentro da estratégia.",
+    shortName: "Conteúdo & Autoridade",
+    name: "Conteúdo e Autoridade",
+    headline: "Para construir consistência e desejo sem transformar você em escravo das redes.",
+    audience: "Negócios que precisam de presença digital relevante com foco em conversão.",
+    delivers: [
+      "Planejamento editorial com foco em vendas",
+      "Roteiros estratégicos para vídeos e Reels",
+      "Copywriting persuasivo e mensagens de valor",
+      "Direção criativa de comunicação",
+    ],
+    outcome: "Cada conteúdo passa a cumprir uma função clara de atração e valor.",
   },
   {
-    id: "trafego",
-    name: "Tráfego pago",
-    title: "Não é sobre colocar dinheiro no botão.",
-    audience:
-      "Para empresas que querem usar mídia paga com estratégia, acompanhamento e otimização.",
-    delivers:
-      "Planejamento, configuração, gestão e otimização de campanhas no Meta Ads e Google Ads, com públicos, mensuração e acompanhamento de desempenho.",
-    outcome: "Sua verba trabalha com uma estratégia por trás\u00a0— e não sozinha.",
+    id: "aquisicao",
+    shortName: "Aquisição & Tráfego",
+    name: "Aquisição e Performance",
+    headline: "Para conectar seu negócio às pessoas certas com engenharia de dados.",
+    audience: "Empresas que querem mídia paga com mensuração técnica e previsibilidade.",
+    delivers: [
+      "Campanhas estruturadas no Meta e Google Ads",
+      "Segmentação qualificada e novos públicos",
+      "Parametrização técnica de conversão",
+      "Otimização contínua de verba e testes",
+    ],
+    outcome: "Mídia paga com retorno mensurável, integrada ao funil de vendas.",
   },
   {
-    id: "atendimento",
-    name: "Atendimento e conversão",
-    title: "O clique não é o fim.",
-    audience:
-      "Para empresas que recebem contatos, mas percebem oportunidades esfriando no WhatsApp.",
-    delivers:
-      "Aula estratégica de atendimento e Manual de Atendimento WhatsApp com scripts, direcionamentos e tratamento de objeções.",
-    outcome: "Sua equipe sabe o que fazer quando a oportunidade chega.",
+    id: "presenca",
+    shortName: "Presença & Rotinas",
+    name: "Presença e Organização Operacional",
+    headline: "Para manter a regularidade digital e dar fluidez às rotinas do negócio.",
+    audience: "Empresas que precisam manter frequência digital e rotinas de relacionamento organizadas.",
+    delivers: [
+      "Gestão do calendário e agendamento de posts",
+      "Suporte à consistência de presença",
+      "Apoio em rotinas, demandas e agendas",
+      "Organização de processos com clientes",
+    ],
+    outcome: "Consistência de marca e rotinas previsíveis sem sobrecarregar sua equipe.",
+  },
+  {
+    id: "comercial",
+    shortName: "Comercial & Vendas",
+    name: "Processo Comercial e Conversão",
+    headline: "Para transformar contatos em vendas concretas com agilidade e método.",
+    audience: "Negócios que recebem leads, mas sofrem com demora ou equipe sem padrão de atendimento.",
+    delivers: [
+      "Diagnóstico do atendimento no WhatsApp",
+      "Scripts e fluxos de qualificação de leads",
+      "Padronização da jornada de vendas",
+      "Treinamento e orientação de equipe",
+    ],
+    outcome: "Sua equipe atende com velocidade, método e alta taxa de fechamento.",
   },
 ];
 
-export type AdditionalService = { name: string; text: string };
-
-export const additionalServicesTitle = "Também fazemos";
-
-export const additionalServices: AdditionalService[] = [
-  {
-    name: "Google e SEO local",
-    text: "Para sua empresa ser encontrada por quem já está procurando pelo que você oferece.",
-  },
-  {
-    name: "Landing pages",
-    text: "Páginas pensadas para transformar atenção em ação.",
-  },
-  {
-    name: "Diagnóstico digital",
-    text: "Uma visão externa sobre marca, Instagram, Google, WhatsApp, oferta e jornada do cliente.",
-  },
-  {
-    name: "Agentes de IA",
-    text: "Automação para atendimento, suporte, pós-venda e reativação\u00a0— quando fizer sentido para a operação.",
-  },
-  {
-    name: "Identidade visual",
-    text: "Para empresas que precisam alinhar a aparência da marca ao posicionamento que querem construir.",
-  },
-];
-
-export const scope = {
-  title: "Sem pacote misterioso. Sem letra miúda.",
-  intro:
-    "Antes de começar, você sabe exatamente o que a IQON assume, o que depende da sua equipe e o que não faz parte da gestão.",
-  includedTitle: "Está incluso",
-  included: [
-    "Imersão e briefing de marca",
-    "Planejamento estratégico",
-    "Calendário editorial",
-    "Conteúdos para feed",
-    "Legendas",
-    "Roteiros de Reels",
-    "Aprovação e ajustes",
-    "Agendamento e publicação",
-    "Gestão de Meta Ads",
-    "Gestão de Google Ads",
-    "Direção estratégica para Stories",
-    "Aula de atendimento",
-    "Manual de Atendimento WhatsApp",
-    "Relatório mensal de desempenho",
-  ],
-  clientSideTitle: "O que depende de você",
-  clientSide: [
+export const customScope = {
+  title: "Como funciona a contratação sob medida",
+  points: [
     {
-      item: "Verba de mídia",
-      note: "O investimento em anúncios é pago diretamente à Meta ou ao Google.",
+      title: "Solução focada na dor real",
+      text: "Você contrata apenas as frentes que atacam seu gargalo atual. Sem empurrar serviços desnecessários.",
     },
     {
-      item: "Stories",
-      note: "A IQON orienta o que comunicar e como gravar. A presença espontânea da marca continua sendo sua.",
+      title: "Escopo transparente",
+      text: "Definimos com clareza o que está incluso e o que não faz parte do trabalho desde o primeiro dia.",
     },
     {
-      item: "Identidade visual",
-      note: "Pode ser desenvolvida separadamente quando necessário.",
+      title: "Responsabilidades claras",
+      text: "A IQON assume a inteligência e execução; você paga a mídia direto às plataformas e valida as etapas.",
+    },
+    {
+      title: "Sem fidelidade forçada",
+      text: "Trabalhamos com aviso prévio de 30 dias sem multas. Nossa permanência se sustenta no método e na confiança.",
     },
   ],
 };

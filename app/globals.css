@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /*
- * IQON — tokens de design
- * Paleta derivada da identidade atual (abismo violeta + lilás), com superfícies claras
- * em névoa lilás no lugar do creme genérico.
+ * IQON — tokens de design (versão ultra-legível & moderna)
+ * Tipografia 100% moderna sans-serif (Hanken Grotesk): limpa, firme e sem serifa fina.
  */
 @theme {
   --color-abismo: #0a0016;
-  --color-noite: #150728;
+  --color-noite: #130624;
+  --color-noite-card: #190930;
   --color-violeta: #6b21c8;
   --color-violeta-escuro: #5516a6;
   --color-lilas: #b99af0;
@@ -19,55 +19,67 @@
   --color-tinta: #140a22;
   --color-tinta-suave: #574d66;
 
-  /* Escala tipográfica */
-  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
-  --text-display--line-height: 1;
-  --text-display--letter-spacing: -0.02em;
-  --text-h2: clamp(2.25rem, 1.65rem + 2.6vw, 4.125rem);
-  --text-h2--line-height: 1.04;
-  --text-h2--letter-spacing: -0.015em;
-  --text-h3: clamp(1.75rem, 1.5rem + 1vw, 2.375rem);
-  --text-h3--line-height: 1.1;
-  --text-h3--letter-spacing: -0.01em;
-  --text-h4: clamp(1.375rem, 1.25rem + 0.5vw, 1.75rem);
-  --text-h4--line-height: 1.2;
-  --text-lead: clamp(1.125rem, 1.07rem + 0.25vw, 1.3125rem);
+  /* Escala tipográfica moderna e altamente legível */
+  --text-display: clamp(1.875rem, 1.4rem + 1.8vw, 2.875rem);
+  --text-display--line-height: 1.12;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-h2: clamp(1.5rem, 1.25rem + 1vw, 2.125rem);
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.025em;
+
+  --text-h3: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --text-h3--line-height: 1.3;
+  --text-h3--letter-spacing: -0.02em;
+
+  --text-h4: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --text-h4--line-height: 1.4;
+  --text-h4--letter-spacing: -0.01em;
+
+  --text-lead: clamp(0.9375rem, 0.9rem + 0.15vw, 1.0625rem);
   --text-lead--line-height: 1.55;
-  --text-body: 1.0625rem;
-  --text-body--line-height: 1.65;
-  --text-small: 0.9375rem;
-  --text-small--line-height: 1.55;
-  --text-label: 0.8125rem;
-  --text-label--line-height: 1.45;
-  --text-label--letter-spacing: 0.01em;
+
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.55;
+
+  --text-small: 0.8125rem;
+  --text-small--line-height: 1.45;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.05em;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  /* Substituição da serifa fina por sans-serif limpa e robusta */
+  --font-display: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Ritmo vertical das seções */
+/* Ritmo vertical contido e dinâmico */
 @utility section-y {
-  padding-block: clamp(5rem, 3.4rem + 6vw, 9.5rem);
+  padding-block: clamp(2.5rem, 2rem + 2vw, 4rem);
 }
 
-/* Grão sutil das superfícies escuras (herdado da identidade atual) */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Grão sutil das superfícies escuras */
 @utility grain {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.07 0 0 0 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 200px 200px;
 }
 
-/* Animações: o atraso vem de --delay no próprio elemento. Sempre usadas com motion-safe: */
-
-/* Desenha um traço (circle ou path com pathLength="1" e stroke-dasharray="1"). */
+/* Animações otimizadas */
 @utility anim-draw {
   animation: draw 1.6s var(--ease-out-soft) var(--delay, 0s) both;
 }
 
-/* Mesmo desenho, acompanhando a rolagem onde o navegador suporta; nos demais, o traço aparece completo. */
 @utility anim-draw-on-scroll {
   @supports (animation-timeline: view()) {
     animation: draw linear both;
@@ -77,11 +89,11 @@
 }
 
 @utility anim-rise {
-  animation: rise 0.9s var(--ease-out-soft) var(--delay, 0s) both;
+  animation: rise 0.8s var(--ease-out-soft) var(--delay, 0s) both;
 }
 
 @utility anim-fade-in {
-  animation: fade-in 1.2s ease var(--delay, 0s) both;
+  animation: fade-in 0.9s ease var(--delay, 0s) both;
 }
 
 @utility anim-orbit {
@@ -100,7 +112,7 @@
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(0.875rem);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -118,88 +130,10 @@
 }
 
 @keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@layer base {
-  html {
-    background-color: var(--color-abismo);
-    color-scheme: dark;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
-  }
-
-  html:has(dialog[open]) {
-    overflow: hidden;
-  }
-
-  body {
-    background-color: var(--color-abismo);
-    color: var(--color-luz);
-    font-family: var(--font-sans);
-    font-size: var(--text-body);
-    line-height: var(--text-body--line-height);
-    text-rendering: optimizeLegibility;
-  }
-
-  :where(section[id]) {
-    scroll-margin-top: 4.5rem;
-  }
-
-  @media (min-width: 64rem) {
-    :where(section[id]) {
-      scroll-margin-top: 5.5rem;
-    }
-  }
-
-  ::selection {
-    background-color: var(--color-lilas);
-    color: var(--color-abismo);
-  }
-
-  /* Foco visível com contraste correto em cada superfície */
-  :focus-visible {
-    outline: 2px solid var(--focus-color, var(--color-lilas));
-    outline-offset: 3px;
-  }
-
-  .on-light {
-    --focus-color: var(--color-violeta);
-  }
-
-  .on-dark {
-    --focus-color: var(--color-lilas);
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
-}
-
-/* Abertura suave do FAQ onde o navegador suporta (melhoria progressiva) */
-@supports (interpolate-size: allow-keywords) {
-  @media (prefers-reduced-motion: no-preference) {
-    .faq-item {
-      interpolate-size: allow-keywords;
-    }
-
-    .faq-item::details-content {
-      block-size: 0;
-      overflow-y: clip;
-      transition:
-        block-size 0.4s var(--ease-out-soft),
-        content-visibility 0.4s allow-discrete;
-    }
-
-    .faq-item[open]::details-content {
-      block-size: auto;
-    }
   }
 }

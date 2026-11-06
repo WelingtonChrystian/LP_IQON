@@ -1,34 +1,74 @@
+import { Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { SectionIntro } from "@/components/ui/SectionIntro";
 import { processSection, steps } from "@/content/process";
 
 export function Process() {
   return (
-    <section id="processo" aria-labelledby="processo-title" className="grain section-y bg-abismo">
+    <section id="metodo" aria-labelledby="metodo-title" className="grain section-y bg-abismo/75 backdrop-blur-[2px]">
       <Container>
-        <SectionIntro id="processo-title" title={processSection.title} />
+        <div className="max-w-2xl">
+          <p className="text-label font-medium uppercase tracking-wider text-lilas">
+            {processSection.tagline}
+          </p>
+          <h2 id="metodo-title" className="mt-1.5 font-display text-h2 text-balance text-luz">
+            {processSection.title}
+          </h2>
+          <p className="mt-3 text-lead text-pretty text-luz-suave">
+            {processSection.intro}
+          </p>
+        </div>
 
-        <ol className="relative mt-14 lg:mt-20 lg:grid lg:grid-cols-5 lg:gap-x-8 lg:before:absolute lg:before:inset-x-0 lg:before:top-0 lg:before:h-px lg:before:bg-lilas/25">
-          {steps.map((step, index) => (
-            <li
-              key={step.title}
-              className="relative border-l border-lilas/25 pb-12 pl-8 last:pb-0 lg:border-l-0 lg:pb-0 lg:pl-0 lg:pt-10"
+        {/* 3 cards horizontais compactos */}
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="relative flex flex-col justify-between rounded-2xl border border-lilas/20 bg-noite-card/80 p-6 backdrop-blur-sm sm:p-7"
             >
-              <span
-                aria-hidden="true"
-                className="absolute -left-[5px] top-2 size-[9px] rounded-full bg-lilas lg:-top-1 lg:left-0"
-              />
-              <p aria-hidden="true" className="font-display text-[2.5rem] leading-none text-lilas">
-                {String(index + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-4 font-display text-h4 text-balance text-luz">{step.title}</h3>
-              <p className="mt-3 text-small text-pretty text-luz-suave">{step.text}</p>
-              <p className="mt-4 font-display text-[1.25rem] leading-snug italic text-pretty text-luz">
-                {step.note}
-              </p>
-            </li>
+              <div>
+                <div className="flex items-center justify-between border-b border-lilas/10 pb-4">
+                  <span className="rounded-full border border-lilas/30 bg-lilas/10 px-2.5 py-0.5 text-label font-medium uppercase tracking-wider text-lilas-claro">
+                    {step.stage}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="font-display text-2xl font-light text-lilas/40"
+                  >
+                    {step.number}
+                  </span>
+                </div>
+
+                <h3 className="mt-4 font-sans text-h3 font-medium text-luz">
+                  {step.title}
+                </h3>
+
+                <p className="mt-2.5 text-small text-pretty text-luz-suave leading-relaxed">
+                  {step.summary}
+                </p>
+
+                <ul className="mt-5 space-y-2 border-t border-lilas/10 pt-4">
+                  {step.highlights.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-small text-luz">
+                      <span
+                        aria-hidden="true"
+                        className="grid size-3.5 shrink-0 place-items-center rounded-full bg-lilas/20 text-lilas-claro"
+                      >
+                        <Check className="size-2.5" strokeWidth={3} />
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-6 border-t border-lilas/10 pt-4">
+                <p className="text-label font-medium text-lilas-claro">
+                  ✦ {step.note}
+                </p>
+              </div>
+            </div>
           ))}
-        </ol>
+        </div>
       </Container>
     </section>
   );

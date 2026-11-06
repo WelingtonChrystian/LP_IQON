@@ -1,71 +1,78 @@
 /**
- * Diagnóstico: dores reais do cliente ideal (ICP IQON).
- * O que o visitante marca aqui ou no formulário final entra na mensagem de WhatsApp.
+ * Gargalos reais do cliente (síntese cirúrgica para leitura em 5 segundos).
  */
 export type PainOption = {
   id: string;
-  /** Texto da opção no formulário final, em primeira pessoa: é o que vai na mensagem. */
   label: string;
 };
 
 export type Pain = PainOption & {
-  /** Frase do diagnóstico. */
   title: string;
-  /** Consequência, logo abaixo da frase. */
   detail: string;
+  tag: string;
 };
 
 export const diagnosis = {
-  title: "Onde sua marca está perdendo oportunidades?",
+  tagline: "Diagnóstico Rápido",
+  title: "Onde o seu negócio está travando hoje?",
   intro:
-    "Marque o que parece familiar. No final, esses pontos podem ir direto para a sua mensagem no WhatsApp\u00a0— para a nossa conversa começar pelo que realmente importa.",
-  /** Nome do grupo de opções para leitores de tela. */
-  legend: "Pontos que parecem familiares",
+    "O problema nem sempre é falta de postagens. Selecione o que parece familiar para avaliarmos no WhatsApp:",
+  legend: "Gargalos frequentes",
   status(count: number) {
-    if (count === 0) return "Se preferir, conte tudo para a gente na conversa.";
-    if (count === 1) return "1 ponto identificado. Ele já pode ir na sua mensagem.";
-    return `${count} pontos identificados. Eles já podem ir na sua mensagem.`;
+    if (count === 0) return "Selecione um ou mais gargalos para o diagnóstico.";
+    if (count === 1) return "1 ponto identificado. Já pode ir na sua mensagem.";
+    return `${count} pontos identificados. Já podem ir na sua mensagem.`;
   },
 };
 
 export const pains: Pain[] = [
   {
-    id: "indicacao",
-    title: "Os clientes chegam quase só por indicação.",
-    detail: "Quando a indicação diminui, o movimento também diminui.",
-    label: "Dependo demais de indicação",
-  },
-  {
-    id: "instagram",
-    title: "Seu Instagram não representa o nível do seu negócio.",
-    detail: "Você entrega muito mais do que a sua presença digital consegue mostrar.",
-    label: "Meu Instagram não representa meu negócio",
-  },
-  {
     id: "diferenciacao",
-    title: "Sua marca parece igual às concorrentes.",
-    detail: "Quando o valor não está claro, o preço acaba virando parte importante da decisão.",
-    label: "Minha marca parece igual às concorrentes",
+    tag: "Posicionamento",
+    title: "Marca sem diferenciação clara",
+    detail: "Você entrega excelência, mas o cliente não percebe o valor e compara você pelo preço.",
+    label: "Minha marca não comunica seu diferencial e disputa por preço",
   },
   {
-    id: "trafego",
-    title: "Você já colocou dinheiro em anúncios sem entender o retorno.",
-    detail: "Tráfego acelera uma estratégia. Não substitui uma estratégia.",
-    label: "Já investi em anúncios sem retorno claro",
+    id: "indicacao",
+    tag: "Aquisição",
+    title: "Dependência de indicação",
+    detail: "Quando o boca a boca diminui, o faturamento oscila por falta de um canal ativo e previsível.",
+    label: "Dependo quase só de indicação e não tenho previsibilidade",
+  },
+  {
+    id: "anuncios",
+    tag: "Tráfego",
+    title: "Anúncios sem retorno claro",
+    detail: "Verba investida em mídia paga sem estratégia, sem mensuração técnica ou sem conversão alinhada.",
+    label: "Já investi em anúncios sem retorno claro sobre o investimento",
   },
   {
     id: "atendimento",
-    title: "As pessoas chegam no WhatsApp, mas poucas avançam.",
-    detail: "Atrair atenção não basta quando a conversa comercial não acompanha.",
-    label: "Recebo contatos, mas eles não avançam",
+    tag: "Conversão",
+    title: "Leads esfriam no WhatsApp",
+    detail: "Demora na resposta, mensagens engessadas ou falta de condução fazem contatos sumirem sem fechar.",
+    label: "Recebo contatos no WhatsApp, mas poucos avançam para a venda",
+  },
+  {
+    id: "presenca",
+    tag: "Presença",
+    title: "Comunicação inconsistente",
+    detail: "A rotina engole o tempo e a comunicação digital fica parada ou vira uma obrigação cansativa.",
+    label: "Não consigo manter consistência e autoridade na presença digital",
+  },
+  {
+    id: "processo",
+    tag: "Operação",
+    title: "Equipe ou processos sem método",
+    detail: "Falta padrão na condução comercial e gargalos operacionais prejudicam a experiência do cliente.",
+    label: "Falta método na equipe ou nos processos comerciais e operacionais",
   },
 ];
 
-/** Opção extra, só no formulário final, para quem ainda não identificou o problema. */
 export const unsureOption: PainOption = {
   id: "nao-sei",
-  label: "Ainda não sei exatamente onde está o problema",
+  label: "Quero entender o diagnóstico geral do meu negócio",
 };
 
-/** Todas as opções do formulário, na ordem em que aparecem (e entram na mensagem). */
 export const painOptions: PainOption[] = [...pains, unsureOption];

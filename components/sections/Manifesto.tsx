@@ -5,44 +5,37 @@ export function Manifesto() {
   const [firstLine, secondLine] = manifesto.titleLines;
 
   return (
-    <section id="posicionamento" aria-labelledby="manifesto-title" className="section-y bg-noite">
+    <section id="posicionamento" aria-labelledby="manifesto-title" className="section-y bg-noite/80 backdrop-blur-[2px]">
       <Container>
-        <h2 id="manifesto-title" className="font-display text-h2 text-luz">
-          <span className="block text-balance">{firstLine}</span>{" "}
-          <span className="block text-balance italic sm:pl-[12%] lg:pl-[22%]">{secondLine}</span>
-        </h2>
-
-        <div className="mt-12 grid gap-8 lg:mt-20 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-5 lg:col-span-5 lg:col-start-3">
-            {manifesto.argument.map((paragraph) => (
-              <p key={paragraph} className="text-lead text-pretty text-luz-suave">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-          <div className="lg:col-span-5">
-            <p className="text-lead text-pretty text-luz">{manifesto.stance}</p>
-            <p className="mt-6 font-display text-h3 italic text-lilas-claro">{manifesto.closing}</p>
-          </div>
+        <div className="max-w-3xl">
+          <h2 id="manifesto-title" className="text-h2 font-semibold tracking-tight text-luz">
+            <span className="block text-balance">{firstLine}</span>
+            <span className="block text-balance text-lilas">{secondLine}</span>
+          </h2>
+          <p className="mt-3 text-lead text-luz-suave max-w-2xl">
+            {manifesto.subtitle}
+          </p>
         </div>
 
-        <ul className="mt-20 grid gap-x-16 gap-y-14 md:grid-cols-2 lg:mt-28 lg:gap-x-24">
+        {/* 4 Princípios em Grid 4 colunas compacto */}
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {principles.map((principle) => (
-            <li key={principle.title} className="border-t border-lilas/20 pt-7">
-              <h3 className="font-display text-h4 text-balance text-luz">{principle.title}</h3>
-              <div className="mt-4 space-y-3 text-body text-pretty">
-                {principle.paragraphs.map((paragraph, index) => (
-                  <p key={paragraph} className={index === 0 ? "text-luz" : "text-luz-suave"}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-              <p className="mt-5 font-display text-[1.375rem] leading-snug italic text-pretty text-lilas-claro">
-                {principle.closing}
+            <div
+              key={principle.title}
+              className="rounded-2xl border border-lilas/15 bg-noite-card/60 p-5 backdrop-blur-sm"
+            >
+              <span className="font-display text-xl font-light text-lilas/50">
+                {principle.number}
+              </span>
+              <h3 className="mt-2 font-sans text-h4 font-medium text-luz">
+                {principle.title}
+              </h3>
+              <p className="mt-2 text-small text-luz-suave leading-relaxed">
+                {principle.text}
               </p>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </Container>
     </section>
   );

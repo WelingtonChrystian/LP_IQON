@@ -1,52 +1,72 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { SectionIntro } from "@/components/ui/SectionIntro";
 import { team, teamSection, type TeamMember } from "@/content/team";
 import { cn } from "@/lib/cn";
 
 export function Team() {
-  const [closingLead, closingEnd] = teamSection.closing;
-
   return (
     <section id="equipe" aria-labelledby="equipe-title" className="on-light section-y bg-nevoa text-tinta">
       <Container>
-        <SectionIntro
-          id="equipe-title"
-          tone="light"
-          title={teamSection.title}
-          intro={teamSection.intro}
-        />
+        <div className="max-w-2xl">
+          <p className="text-label font-medium uppercase tracking-wider text-violeta">
+            {teamSection.tagline}
+          </p>
+          <h2 id="equipe-title" className="mt-1.5 font-display text-h2 text-balance">
+            {teamSection.title}
+          </h2>
+          <p className="mt-2.5 text-lead text-pretty text-tinta-suave">
+            {teamSection.intro}
+          </p>
+        </div>
 
-        <ul className="mt-14 grid gap-12 md:grid-cols-3 md:gap-8 lg:mt-20">
+        {/* 3 cards de equipe modernos e enxutos */}
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
           {team.map((member) => (
-            <li key={member.name} className="border-t border-tinta/15 pt-8">
-              <Portrait member={member} />
-              <h3 className="mt-7 font-display text-h3">{member.name}</h3>
-              <p className="mt-1 text-small font-medium text-violeta">{member.role}</p>
-              <p className="mt-4 text-body text-pretty text-tinta-suave">{member.bio}</p>
-            </li>
-          ))}
-        </ul>
+            <div
+              key={member.name}
+              className="rounded-2xl border border-tinta/10 bg-white p-5 shadow-xs flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3.5">
+                  <Portrait member={member} />
+                  <div>
+                    <h3 className="font-sans text-h4 font-medium text-tinta">
+                      {member.name}
+                    </h3>
+                    <p className="text-label font-semibold text-violeta uppercase tracking-wider">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
 
-        <p className="mt-16 max-w-[52rem] font-display text-h3 italic text-balance text-tinta lg:mt-24">
-          <span className="block">{closingLead}</span> <span className="block">{closingEnd}</span>
-        </p>
+                <p className="mt-3.5 text-small text-pretty text-tinta-suave leading-relaxed">
+                  {member.bio}
+                </p>
+              </div>
+
+              <div className="mt-4 border-t border-tinta/10 pt-3">
+                <span className="inline-block rounded-full bg-nevoa px-2.5 py-1 text-label font-medium text-tinta-suave">
+                  ✦ {member.focus}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </Container>
     </section>
   );
 }
 
-const portraitRing = "size-24 rounded-full ring-1 ring-tinta/10 ring-offset-[6px] ring-offset-nevoa";
+const portraitRing = "size-12 rounded-full ring-1 ring-tinta/10";
 
-/** Foto quando houver; até lá, monograma no anel duplo da marca. */
 function Portrait({ member }: { member: TeamMember }) {
   if (member.photo) {
     return (
       <Image
         src={member.photo.src}
         alt={member.photo.alt}
-        width={192}
-        height={192}
+        width={96}
+        height={96}
         className={cn(portraitRing, "object-cover")}
       />
     );
@@ -57,7 +77,7 @@ function Portrait({ member }: { member: TeamMember }) {
       aria-hidden="true"
       className={cn(
         portraitRing,
-        "grid place-items-center border border-tinta/15 bg-papel font-display text-[2.75rem] leading-none text-violeta",
+        "grid place-items-center border border-tinta/15 bg-nevoa font-display text-lg font-medium text-violeta shrink-0",
       )}
     >
       {member.name.charAt(0)}

@@ -51,7 +51,7 @@ export function MobileMenu() {
                 <a
                   href={item.href}
                   onClick={close}
-                  className="flex min-h-16 items-center font-display text-[2.5rem] leading-none text-luz"
+                  className="flex min-h-12 items-center font-sans text-2xl font-medium text-luz"
                 >
                   {item.label}
                 </a>

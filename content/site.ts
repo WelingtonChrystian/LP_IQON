@@ -1,7 +1,6 @@
 /**
  * Dados institucionais, navegação, botões, mensagens de WhatsApp e textos do hero.
- * Fonte: site atual (iqonagencia.my.canva.site) e base de conhecimento IQON.
- * Campos vazios ("") não são exibidos na página.
+ * Reposicionamento estratégico IQON: foco em diagnóstico, frentes modulares e execução integrada.
  */
 type SiteConfig = {
   name: string;
@@ -19,10 +18,10 @@ type SiteConfig = {
 
 export const site: SiteConfig = {
   name: "IQON",
-  title: "IQON | Marketing estratégico para sua marca ser escolhida",
-  tagline: "Marketing para quem não para.",
+  title: "IQON | Estratégia e Soluções para Negócios",
+  tagline: "Primeiro o diagnóstico. Depois, a solução certa.",
   description:
-    "Agência de marketing estratégico para negócios locais. Posicionamento, conteúdo, tráfego pago e atendimento trabalhando como uma única estratégia.",
+    "Investigamos onde estão os gargalos do seu negócio e estruturamos soluções sob medida em estratégia, performance, processos comerciais e operação.",
   url: resolveSiteUrl(),
   whatsapp: {
     number: "5551984346415",
@@ -48,38 +47,39 @@ function resolveSiteUrl() {
 }
 
 export const navigation = [
+  { label: "Gargalos", href: "#gargalos" },
   { label: "Método", href: "#metodo" },
-  { label: "Serviços", href: "#servicos" },
+  { label: "Frentes", href: "#frentes" },
   { label: "Equipe", href: "#equipe" },
   { label: "Dúvidas", href: "#duvidas" },
 ] as const;
 
 /**
- * Rótulos dos botões, na ordem em que aparecem.
- * Acompanham a leitura (entender → identificar → conversar) e todos levam a uma
- * conversa no WhatsApp, exceto `heroSecondary`, que rola até o método.
+ * Rótulos dos botões na jornada consultiva:
+ * Entender o momento → identificar gargalos → conhecer o método → iniciar conversa.
  */
 export const ctas = {
   header: "Conversar com a IQON",
-  hero: "Quero entender o que minha marca precisa",
-  heroSecondary: { label: "Ver como a IQON trabalha", href: "#metodo" },
-  diagnosis: "Identificar meus pontos de atenção",
-  system: "Conversar sobre a minha marca",
-  scope: "Perguntar sobre o escopo",
-  question: "Perguntar no WhatsApp",
-  conversation: "Quero conversar com a IQON",
+  hero: "Quero entender o que meu negócio precisa",
+  heroSecondary: { label: "Conhecer o Método IQON", href: "#metodo" },
+  diagnosis: "Analisar meus gargalos no WhatsApp",
+  system: "Conversar sobre o meu negócio",
+  scope: "Entender meu plano sob medida",
+  question: "Tirar dúvidas no WhatsApp",
+  conversation: "Iniciar conversa de diagnóstico",
 } as const;
 
 /** Mensagens que abrem no WhatsApp. O visitante sempre confirma o envio. */
 export const whatsappMessages = {
-  default: "Olá, IQON! Quero conversar sobre o marketing da minha empresa.",
-  question: "Olá, IQON! Tenho uma dúvida antes de conversar sobre minha empresa.",
+  default:
+    "Olá, IQON! Quero entender o que meu negócio precisa para avançar e agendar um diagnóstico.",
+  question: "Olá, IQON! Tenho uma dúvida sobre o método e as frentes de atuação.",
   /** Rótulos dos dados do formulário dentro da mensagem. */
   fields: { name: "Nome", business: "Empresa", segment: "Segmento", city: "Cidade" },
   /** Título da lista de dificuldades marcadas (uma ou várias). */
   painsHeading: {
-    one: "Hoje, minha principal dificuldade é:",
-    many: "Hoje, minhas principais dificuldades são:",
+    one: "Identifiquei este gargalo no meu negócio:",
+    many: "Identifiquei estes gargalos no meu negócio:",
   },
 } as const;
 
@@ -87,13 +87,14 @@ export const hero = {
   titleLead: "Sua empresa não precisa aparecer mais.",
   titleSignature: "Precisa ser escolhida.",
   subtitle:
-    "Posicionamento, conteúdo, tráfego pago e atendimento trabalhando como uma única estratégia\u00a0— para sua marca ser encontrada, entendida e lembrada por quem pode comprar.",
+    "A maioria das empresas oferece pacotes prontos. A IQON começa investigando o seu negócio: identificamos onde estão os gargalos reais em posicionamento, atração, atendimento ou operação — estruturando uma solução sob medida para o seu momento.",
   /** Vem depois dos nomes da equipe (content/team.ts). */
-  teamLine: "estratégia, conteúdo, tráfego e atendimento trabalhando na mesma direção.",
+  teamLine:
+    "estratégia, performance e processos comerciais trabalhando a partir do mesmo diagnóstico.",
 } as const;
 
 export const footer = {
   description:
-    "Posicionamento, conteúdo, tráfego e atendimento trabalhando juntos para construir marcas mais claras, relevantes e preparadas para crescer.",
+    "Diagnóstico, estratégia, performance e estruturação comercial trabalhando juntos para construir empresas com diferenciação clara, demanda qualificada e capacidade de conversão.",
   rights: "Todos os direitos reservados.",
 } as const;

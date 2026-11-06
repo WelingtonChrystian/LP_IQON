@@ -1,27 +1,33 @@
 /**
- * Diagrama das três frentes: presença, autoridade e conversão ao redor da marca.
- *
- * É um sistema, não uma sequência: as três frentes trabalham juntas desde o início.
- * Por isso este conteúdo não leva números, prazos, meses nem setas de "próxima fase".
+ * Diagrama do sistema: três especialidades trabalhando a partir de um mesmo diagnóstico.
+ * Estratégia, Performance e Conversão integradas ao redor do negócio.
  */
 export type Front = { id: string; name: string; description: string };
 
 export const frontsSection = {
-  title: "Sua marca precisa funcionar em três frentes.",
-  center: "Sua marca",
-  caption: ["Não é uma sequência.", "É um sistema."],
+  title: "Três especialidades. Um mesmo diagnóstico.",
+  center: "Seu negócio",
+  caption: ["Primeiro o diagnóstico.", "Depois a solução certa."],
   /** Descrição do diagrama para leitores de tela. */
   diagramLabel:
-    "Diagrama com três círculos sobrepostos, presença, autoridade e conversão, e a sua marca no centro, onde os três se encontram.",
+    "Diagrama com três círculos sobrepostos: Estratégia, Performance e Conversão, e o seu negócio no centro, onde os três se integram.",
 };
 
-/** Exatamente três itens: a ordem define a posição no diagrama (topo, base esquerda, base direita). */
+/** Exatamente três itens: topo, base esquerda e base direita no diagrama. */
 export const fronts: readonly [Front, Front, Front] = [
-  { id: "presenca", name: "Presença", description: "Ser vista pelas pessoas certas." },
-  { id: "autoridade", name: "Autoridade", description: "Deixar claro por que escolher você." },
+  {
+    id: "estrategia",
+    name: "Estratégia",
+    description: "Posicionamento, diferenciação e autoridade de marca.",
+  },
+  {
+    id: "performance",
+    name: "Performance",
+    description: "Aquisição qualificada, campanhas e inteligência de dados.",
+  },
   {
     id: "conversao",
     name: "Conversão",
-    description: "Transformar interesse em conversa comercial.",
+    description: "Processos comerciais, atendimento ágil e operação.",
   },
 ];
