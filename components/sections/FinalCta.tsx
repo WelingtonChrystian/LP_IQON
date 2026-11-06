@@ -12,8 +12,8 @@ export function FinalCta() {
       aria-labelledby="contato-title"
       className="grain section-y relative isolate overflow-hidden bg-abismo/75 backdrop-blur-[2px]"
     >
-      <Container className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-center">
-        <div className="lg:col-span-5">
+      <Container className="grid gap-10 lg:grid-cols-12 lg:gap-12 items-center w-full min-w-0">
+        <div className="w-full min-w-0 lg:col-span-5">
           <p className="text-label font-medium uppercase tracking-wider text-lilas">
             {finalCta.tagline}
           </p>
@@ -55,7 +55,7 @@ export function FinalCta() {
           </div>
         </div>
 
-        <LeadForm className="lg:col-span-7" />
+        <LeadForm className="w-full min-w-0 lg:col-span-7" />
       </Container>
     </section>
   );

@@ -43,29 +43,29 @@ export function LeadForm({ className }: { className?: string }) {
       onSubmit={handleSubmit}
       aria-labelledby="lead-form-title"
       className={cn(
-        "rounded-2xl border border-lilas/20 bg-noite-card/85 p-6 backdrop-blur-sm sm:p-7 shadow-xs",
+        "w-full min-w-0 rounded-2xl border border-lilas/20 bg-noite-card/85 p-4 sm:p-7 backdrop-blur-sm shadow-xs",
         className,
       )}
     >
       <div className="flex items-center justify-between border-b border-lilas/15 pb-4">
-        <div>
+        <div className="min-w-0 flex-1 pr-2">
           <h3 id="lead-form-title" className="font-sans text-h4 font-medium text-luz">
             {leadForm.title}
           </h3>
-          <p className="mt-1 text-small text-luz-suave">{leadForm.intro}</p>
+          <p className="mt-1 text-small text-luz-suave text-pretty">{leadForm.intro}</p>
         </div>
         <MessageCircle className="size-5 text-lilas shrink-0" />
       </div>
 
-      <fieldset className="mt-5">
+      <fieldset className="mt-5 w-full min-w-0">
         <legend className="text-label font-medium uppercase tracking-wider text-lilas-claro">
           {leadForm.question}
         </legend>
-        <div className="mt-2.5 grid gap-1.5 max-h-56 overflow-y-auto pr-1">
+        <div className="mt-2.5 grid gap-2 max-h-64 overflow-y-auto pr-1.5 w-full min-w-0 [scrollbar-width:thin] [scrollbar-color:rgba(185,154,240,0.35)_transparent] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-lilas/35 [&::-webkit-scrollbar-track]:bg-transparent">
           {painOptions.map((option) => (
             <label
               key={option.id}
-              className="group flex cursor-pointer items-center gap-2.5 rounded-lg border border-lilas/15 bg-noite/40 px-3 py-2 text-small text-luz-suave transition-colors hover:border-lilas/40 hover:text-luz has-checked:border-lilas has-checked:bg-lilas/10 has-checked:text-luz select-none"
+              className="group flex cursor-pointer items-start gap-2.5 rounded-lg border border-lilas/15 bg-noite/40 p-2.5 text-xs sm:text-small text-luz-suave transition-colors hover:border-lilas/40 hover:text-luz has-checked:border-lilas has-checked:bg-lilas/10 has-checked:text-luz select-none w-full min-w-0"
             >
               <input
                 type="checkbox"
@@ -75,20 +75,20 @@ export function LeadForm({ className }: { className?: string }) {
               />
               <span
                 aria-hidden="true"
-                className="grid size-4 shrink-0 place-items-center rounded-full border border-lilas/30 transition-colors group-has-checked:border-lilas group-has-checked:bg-lilas"
+                className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full border border-lilas/30 transition-colors group-has-checked:border-lilas group-has-checked:bg-lilas"
               >
                 <Check
                   className="size-2.5 text-abismo opacity-0 transition-opacity group-has-checked:opacity-100"
                   strokeWidth={3}
                 />
               </span>
-              <span className="truncate">{option.label}</span>
+              <span className="min-w-0 flex-1 leading-snug break-words text-pretty">{option.label}</span>
             </label>
           ))}
         </div>
       </fieldset>
 
-      <div className="mt-5 grid gap-3 sm:grid-cols-2">
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 w-full min-w-0">
         <Field
           id="lead-name"
           label={leadForm.fields.name}
@@ -129,7 +129,7 @@ export function LeadForm({ className }: { className?: string }) {
         >
           {ctas.conversation}
         </button>
-        <p className="mt-2.5 text-center text-label text-luz-suave/80">
+        <p className="mt-2.5 text-center text-label text-luz-suave/80 text-pretty">
           {leadForm.microcopy}
         </p>
       </div>
