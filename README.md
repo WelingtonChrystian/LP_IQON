@@ -1,70 +1,69 @@
-# IQON — Landing page
+# IQON — Soluções Estratégicas para Negócios
 
-Landing page da IQON (agência de marketing estratégico) em Next.js 16, React 19, TypeScript e Tailwind CSS 4.
+Landing page institucional da **IQON** construída com Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4 e Three.js.
 
-## Rodar
+> **Posicionamento Central:**  
+> *"Primeiro entendemos o que está impedindo seu negócio de avançar. Depois estruturamos o que ele realmente precisa."*
+
+---
+
+## 🚀 Como Rodar Localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-Produção: `npm run build` e `npm run start`. Validação: `npm run lint` e `npx tsc --noEmit`.
+Abra [http://localhost:3000](http://localhost:3000) para visualizar as alterações com Hot-Reload.
 
-O canonical e o Open Graph usam `NEXT_PUBLIC_SITE_URL` (veja `.env.example`). Sem ela, na Vercel vale o domínio de produção do projeto e, localmente, `http://localhost:3000`. Defina a variável quando houver domínio próprio.
+---
 
-## Onde editar o conteúdo
+## 🛠️ Build e Exportação Estática (Hostinger / Apache)
 
-A copy completa, na ordem da página e com o arquivo de cada texto, está em [docs/copy-landing-page.md](docs/copy-landing-page.md).
+O projeto está configurado com `output: "export"` no `next.config.ts` e gera arquivos estáticos puros na pasta `out/`:
 
-Toda a copy fica em `content/`. Os componentes em `components/` só cuidam do layout.
+```bash
+# Gerar build de produção estático
+npm run build
+```
 
-| Arquivo | O que controla |
+Os arquivos da pasta `out/` já vêm acompanhados de `.htaccess` otimizado para servidores Apache (comum na Hostinger), com regras de roteamento, compressão Gzip e cache de assets.
+
+### Pacote ZIP para Hostinger:
+- **`IQON_Hostinger_public_html.zip`**: Conteúdo direto para extrair no diretório `public_html` da Hostinger via Gerenciador de Arquivos.
+- **`IQON_codigo_fonte.zip`**: Cópia limpa do código-fonte para versionamento ou execução Node.js.
+
+---
+
+## 🏛️ Estrutura de Conteúdo e Arquitetura
+
+Toda a inteligência textual e parametrização é isolada na pasta `content/`:
+
+| Arquivo | Descrição |
 | --- | --- |
-| `content/site.ts` | Metadados, WhatsApp, Instagram, navegação, botões, mensagens do WhatsApp, hero e rodapé |
-| `content/fronts.ts` | "Sua marca precisa funcionar em três frentes" e os rótulos do diagrama do sistema |
-| `content/pains.ts` | Diagnóstico (itens marcados vão escritos na mensagem) e opções do formulário |
-| `content/positioning.ts` | Manifesto e princípios |
-| `content/system.ts` | "Quatro partes. Uma estratégia." |
-| `content/services.ts` | Serviços, "Também fazemos" e escopo (incluso / depende de você) |
-| `content/process.ts` | Processo e "O resultado não acontece em uma linha reta" |
-| `content/team.ts` | Equipe (preencha `photo` para trocar o monograma pela foto) |
-| `content/faq.ts` | Perguntas frequentes |
-| `content/contact.ts` | Chamada final, formulário e convite para o Instagram |
-| `content/proof.ts` | Depoimentos e projetos: as seções ficam ocultas enquanto as listas estiverem vazias |
+| `content/site.ts` | Informações da marca, links sociais, WhatsApp e chamada hero |
+| `content/pains.ts` | Bento grid de 6 gargalos reais que conectam direto com mensagem personalizada ao WhatsApp |
+| `content/process.ts` | As 3 etapas do Método IQON (1. Raio-X Diagnóstico, 2. Solução Sob Medida, 3. Execução Estratégica) |
+| `content/services.ts` | 5 Frentes Modulares com abas interativas + 4 Pilares de Escopo Sob Medida |
+| `content/positioning.ts` | Manifesto escuro de alto contraste com os 4 Princípios IQON |
+| `content/team.ts` | Especialistas e frentes integradas (Agatha, Welington, Alanna) |
+| `content/faq.ts` | 8 Perguntas Frequentes em acordeão nativo rápido e sem atrito |
+| `content/contact.ts` | Formulário consultivo pré-formatado e botão de ação para WhatsApp |
 
-Cores, escala tipográfica e animações estão em `app/globals.css`.
+---
 
-## Pendências de conteúdo
+## 🎨 Design System e Recursos Visuais
 
-- Depoimentos reais, com autorização dos clientes → `content/proof.ts`
-- Projetos com imagens → `content/proof.ts` e `public/images/projetos/`
-- Fotos da equipe → `public/images/equipe/` e `content/team.ts`
-- Confirmar a grafia "Welinton" (site atual) ou "Welington" (documentos internos)
-- E-mail comercial, se houver → `content/site.ts`
-- Domínio próprio → `NEXT_PUBLIC_SITE_URL`
+- **Tipografia**: *Hanken Grotesk* (Sans-serif limpa, geométrica, de alta escaneabilidade e leitura ágil em telas desktop e mobile).
+- **Three.js**:
+  - `components/3d/ThreeLoader.tsx`: Preloader cinematográfico em Three.js com contador percentual suave (fade-out em ~900ms).
+  - `components/3d/ThreeBackground.tsx`: Partículas orbitais e wireframe 3D geométrico reagindo organicamente ao scroll e cursor.
+- **Microinterações**: Framer Motion com fallback para `prefers-reduced-motion`.
+- **Paleta**: Off-white contemporâneo com acentos em grafite escuro, preto puro e detalhes sutis de profundidade.
 
-## Estrutura
+---
 
-```
-app/                layout (fontes e metadados), página e tokens de design
-components/
-  sections/         uma seção por arquivo
-  layout/           header, menu mobile, rodapé e CTA fixo no mobile
-  diagnostic/       dores marcadas + link de WhatsApp com contexto
-  ui/               botões, container e título de seção
-  visuals/          diagrama do sistema (três frentes) e logotipo tipográfico
-content/            textos e dados da página
-lib/                montagem da mensagem de WhatsApp e utilitários
-```
+## 📱 Responsividade & Performance
 
-## Decisões
-
-- Narrativa: problema → tensão → diagnóstico → sistema IQON → serviços → processo → prova → objeções → conversa.
-- O diagrama representa um sistema, não uma linha do tempo: presença, autoridade e conversão aparecem sobrepostas e são desenhadas ao mesmo tempo. Nenhum texto da página associa meses ou prazos à chegada de clientes.
-- Condição comercial atual: sem contrato mínimo; qualquer lado encerra com um mês de aviso, sem multa. Prazo de contrato nunca é apresentado como previsão de resultado.
-- Os botões levam a uma conversa no WhatsApp e acompanham a leitura (entender → identificar → conversar). O diagnóstico digital é um produto pago da IQON, então a página não o oferece como gratuito.
-- Conversão pelo WhatsApp com mensagem pronta: nenhum dado do visitante passa por servidor.
-- FAQ com `<details name>` nativo (sem JavaScript) e menu mobile com `<dialog>`.
-- Animações apenas com `prefers-reduced-motion: no-preference`. O traço da seção de resultados acompanha a rolagem onde o navegador suporta e aparece completo nos demais.
-- Nos textos, o travessão vem precedido de ` ` (espaço que não quebra linha), para não começar uma linha sozinho.
+- **Mobile First**: Menu drawer acessível, CTAs táteis com alvos de toque generosos (≥ 48px), tabelas e abas com rolagem suave horizontal quando necessário.
+- **Conversão via WhatsApp**: Mensagens contextualizadas montadas dinamicamente com as opções selecionadas pelo visitante, sem dependência de banco de dados para o formulário inicial.
